@@ -75,14 +75,14 @@
 .topnav a {
     float: left;
     display: block;
-    color: #f9f9f9;
+    color: var(--black);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 .topnav a:hover{
-    background: -webkit-linear-gradient(--brz, --white);
-    color: white;
+    color: -webkit-linear-gradient(var(--brz), var(--black));
+    background-color: var(--white);
 }
 
 </style>
