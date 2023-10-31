@@ -86,7 +86,6 @@
 }
 
 </style>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <div class="topnav" id="topnav">
     <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/index.php" or $_SERVER['REQUEST_URI'] == "/"){echo " class=\"active\"";} ?>>Home</a>
     <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/events.php"){echo " class=\"active\"";} ?>>Events</a>
