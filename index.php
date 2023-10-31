@@ -6,9 +6,10 @@
         <?php include("./header.php") ?>
         
     </head>
+    <body>
+    <?php
+    echo "Welcome to CSC131!\n";
+    echo "Sent from the serverside!"
+    ?>
+</body>
 </html>
-
-<?php
-echo "Welcome to CSC131!\n";
-echo "Sent from the serverside!"
-?>
