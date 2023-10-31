@@ -67,6 +67,10 @@
   --tab-top-corners: 0.25rem 0.25rem 0 0;
   --tab-bottom-corners: 0 0 .25rem .25rem;
 }
+body {
+  margin:0;
+  font-family:Arial;
+}
 
 .topnav {
     overflow: hidden;
@@ -77,16 +81,20 @@
     display: block;
     color: var(--black);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: auto;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 .topnav a:hover{
     color: -webkit-linear-gradient(var(--brz), var(--black));
     background-color: var(--white);
+}
+
+.topnav .icon {
+    display: none;
 }
 
 @media screen and (max-width: 600px) {
