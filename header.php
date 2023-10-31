@@ -69,12 +69,24 @@
 }
 body {
   margin:0;
-  font-family:Arial;
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .topnav {
     overflow: hidden;
-    background-color: white;
+    background-color: var(--white);
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto; 
+    padding: 2rem 0 2rem;
+    box-sizing: border-box;
+}
+.container {
+    width: 90%;
+    max-width: 1400px;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    display: flex;
 }
 .topnav a {
     float: left;
@@ -87,10 +99,10 @@ body {
     text-decoration: none;
     font-size: 1.25rem;
     font-weight: 600;
+    transition: color 1s;
 }
 .topnav a:hover{
-    color: -webkit-linear-gradient(var(--brz), var(--black));
-    background-color: var(--white);
+    color: var(--brz);
 }
 
 .topnav .icon {
@@ -131,15 +143,29 @@ body {
 .buttonIndent {
  text-indent: 20px
 }
+.img { 
+    max-width: 100%;
+    width: 45%;
+    min-width: 180px;
+    vertical-align: middle;
+    border-style: none;
+    box-sizing: content-box;
+    line-height: 30px;
+    display: inline-flex;
+    flex: 0 0 35%;
+}
 
 </style>
 <div class="topnav" id="topnav">
-    <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/index.php" or $_SERVER['REQUEST_URI'] == "/"){echo " class=\"active\"";} ?>>Home</a>
-    <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/events.php"){echo " class=\"active\"";} ?>>Events</a>
-    <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/forum.php"){echo " class=\"active\"";} ?>>Community Forum</a>
-    <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/map.php"){echo " class=\"active\"";} ?>>Map</a>
-    <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/faq.php"){echo " class=\"active\"";} ?>>Info</a>
-    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
+    <div class="container">
+        <img src="/assets/sac-state-logo.png" class="img">  
+        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/index.php" or $_SERVER['REQUEST_URI'] == "/"){echo " class=\"active\"";} ?>>Home</a>
+        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/events.php"){echo " class=\"active\"";} ?>>Events</a>
+        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/forum.php"){echo " class=\"active\"";} ?>>Community Forum</a>
+        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/map.php"){echo " class=\"active\"";} ?>>Map</a>
+        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/faq.php"){echo " class=\"active\"";} ?>>Info</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
+    </div>
   <script>
     function showHamburgerMenu() {
       var x = document.getElementById("topnav");
