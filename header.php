@@ -180,10 +180,42 @@ body {
 }
 
 </style>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false,
+        multianguagePage: true
+    }, 'google_translate_element');
+}
+
+function setLanguage(selectedLanguage) {
+    // Set the language in cookies
+    document.cookie = "selectedLanguage=" + selectedLanguage;
+    // Change the language of the Google Translate Element
+    var translateElement = document.querySelector('.goog-te-combo');
+    translateElement.value = selectedLanguage;
+    translateElement.dispatchEvent(new Event('change'));
+}
+
+function checkCookie() {
+    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)selectedLanguage\s*=\s*([^;]*).*$)|^.*$/, "$1");
+    if (cookieValue) {
+        // Use the stored language preference
+        setLanguage(cookieValue);
+    } else {
+        // Show the language selector popup
+        googleTranslateElementInit();
+    }
+}
+
+window.onload = checkCookie;
+
+</script>
 <div>
     <div class="signin">
-        <div id="google_translate_element" style="color: var(--white)"></div>
+        <div id="google_translate_element" style="flex: none; color: var(--white); align-content: center; float: right"></div>
         <a href="#/signin.php">Sign In</a>
 
     </div>
@@ -209,9 +241,6 @@ body {
       }
     }
     
-    function googleTranslateElementInit() {
-    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
   </script>
 </div>
 
