@@ -80,6 +80,7 @@ body {
     margin-right: auto; 
     padding: 2rem 0 2rem;
     box-sizing: border-box;
+    clear: both;
 }
 .container {
     width: 90%;
@@ -87,6 +88,29 @@ body {
     flex-wrap: nowrap;
     margin: 0 auto;
     display: flex;
+}
+
+.signin {
+    display: flex;
+    float: right;
+    justify: space-between;
+    justify-content: right;
+    background-color: var(--rwgr);
+    width: 100%;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    
+
+}
+.signin a{
+    padding: 0.5rem;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+
 }
 .topnav a {
     float: left;
@@ -101,7 +125,7 @@ body {
     font-weight: 600;
     transition: color 1s;
 }
-.topnav a:hover{
+.topnav .nav a:hover{
     color: var(--brz);
 }
 
@@ -156,17 +180,26 @@ body {
 }
 
 </style>
-<div class="topnav" id="topnav">
-    <div class="container">
-        <img src="/assets/sac-state-logo.png" class="img">  
-        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/index.php" or $_SERVER['REQUEST_URI'] == "/"){echo " class=\"active\"";} ?>>Home</a>
-        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/events.php"){echo " class=\"active\"";} ?>>Events</a>
-        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/forum.php"){echo " class=\"active\"";} ?>>Community Forum</a>
-        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/map.php"){echo " class=\"active\"";} ?>>Map</a>
-        <a href="/"<?php if($_SERVER['REQUEST_URI'] == "/faq.php"){echo " class=\"active\"";} ?>>Info</a>
-        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> 
+<div>
+    <div class="signin">
+        <div id="google_translate_element" style="color: var(--white)"></div>
+        <a href="#/signin.php">Sign In</a>
+
     </div>
-  <script>
+    <div style="clear: both;"></div>
+    <div class="topnav" id="topnav">
+        <div class="container nav">
+            <img src="/assets/sac-state-logo.png" class="img">  
+            <a href="/">Hello</a>
+            <a href="#/events.php">Events</a>
+            <a href="#/forum.php">Community Forum</a>
+            <a href="#/map.php">Map</a>
+            <a href="#/faq.php">Info</a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
+        </div>
+</div>
+<script type="text/javascript">
     function showHamburgerMenu() {
       var x = document.getElementById("topnav");
       if (x.className === "topnav") {
@@ -174,6 +207,10 @@ body {
       } else {
         x.className = "topnav";
       }
+    }
+    
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
   </script>
 </div>
