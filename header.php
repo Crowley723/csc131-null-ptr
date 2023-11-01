@@ -216,7 +216,7 @@ window.onload = checkCookie;
 <div>
     <div class="signin">
         <div id="google_translate_element" style="flex: none; color: var(--white); align-content: center; float: right"></div>
-        <a href="#/signin.php">Sign In</a>
+        <a href="/account/login.php">Sign In</a>
 
     </div>
     <div style="clear: both;"></div>
