@@ -223,11 +223,11 @@ window.onload = checkCookie;
     <div class="topnav" id="topnav">
         <div class="container nav">
             <img src="/assets/sac-state-logo.png" class="img">  
-            <a href="/">Hello</a>
-            <a href="#/events.php">Events</a>
-            <a href="#/forum.php">Community Forum</a>
-            <a href="#/map.php">Map</a>
-            <a href="#/faq.php">Info</a>
+            <a href="/">Home</a>
+            <a href="/events.php">Events</a>
+            <a href="/forum.php">Community Forum</a>
+            <a href="/map.php">Map</a>
+            <a href="/faq.php">Info</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
         </div>
 </div>
