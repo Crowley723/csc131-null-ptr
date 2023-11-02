@@ -89,7 +89,6 @@ body {
     margin: 0 auto;
     display: flex;
 }
-
 .signin {
     display: flex;
     float: right;
@@ -112,6 +111,48 @@ body {
     text-decoration: none;
 
 }
+.signup-box {
+  margin: auto;
+  width : 30%;
+  padding: 10px;
+  text-align: center;
+  border: 3px solid green;
+}
+.signup-box .entry-label {
+  text-align: left;
+}
+.signup-box .form-container{
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.signup-box input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.signup-box input[type="password"] {
+  margin-bottom: 0px;
+}
+
+.signup-box .password-validation{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  font-size: 12px;
+  font-weight: bold;
+}
+.password-validation ul{
+  color: red;
+  margin-top: 0px;
+}
+
 .topnav a {
     float: left;
     display: block;
@@ -227,7 +268,7 @@ window.onload = checkCookie;
             <a href="/events.php">Events</a>
             <a href="/forum.php">Community Forum</a>
             <a href="/map.php">Map</a>
-            <a href="/faq.php">Info</a>
+            <a href="/faq.php">FAQ</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
         </div>
 </div>
