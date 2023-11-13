@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <style>
-.text {
+body p {
     padding-top: 16px;
   padding-right: 500px;
   padding-bottom: 16px;
@@ -16,8 +16,8 @@
         
     </head>
     <body>
-        <div class="text">
-    <br>The quick brown fox jumps over the lazy dog. The quick
+
+    <p>The quick brown fox jumps over the lazy dog. The quick
 brown fox jumps over the lazy dog. The quick brown fox
 jumps over the lazy dog. The quick brown fox jumps over
 the lazy dog. The quick brown fox jumps over the lazy dog.
@@ -26,6 +26,6 @@ brown fox jumps over the lazy dog. The quick brown fox
 jumps over the lazy dog. The quick brown fox jumps over
 the lazy dog. The quick brown fox jumps over the lazy dog.
 The quick brown fox jumps over the lazy dog. The quick
-brown fox jumps over the lazy dog.</br></div>
+brown fox jumps over the lazy dog.</p>
     </body>
 </html>
