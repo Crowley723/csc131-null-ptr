@@ -71,7 +71,6 @@ body {
   margin:0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-
 .topnav {
     overflow: hidden;
     background-color: var(--white);
@@ -89,7 +88,18 @@ body {
     margin: 0 auto;
     display: flex;
 }
-.signin {
+.signin-box{
+  margin: auto;
+  width: 30%;
+  text-align: center;
+  border: 3px solid green;
+  padding: 10px;
+}
+.singin-box .img-container{
+  width: inherit;
+  height: inherit;
+}
+.signin-nav {
     display: flex;
     float: right;
     justify: space-between;
@@ -101,7 +111,7 @@ body {
     
 
 }
-.signin a{
+.signin-nav a{
     padding: 0.5rem;
     color: var(--white);
     font-size: 1.25rem;
@@ -192,11 +202,9 @@ body {
 .topnav .nav a:hover{
     color: var(--brz);
 }
-
 .topnav .icon {
     display: none;
 }
-
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
     display: none;
@@ -206,7 +214,6 @@ body {
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -227,7 +234,6 @@ body {
     text-align: left;
   }
 }
-
 .buttonIndent {
  text-indent: 20px
 }
@@ -288,7 +294,7 @@ window.onload = checkCookie;
 
 </script>
 <div>
-    <div class="signin">
+    <div class="signin-nav">
         <div id="google_translate_element" style="flex: none; color: var(--white); align-content: center; float: right"></div>
         <a href="/account/login.php">Sign In</a>
 
