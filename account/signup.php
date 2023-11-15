@@ -26,7 +26,7 @@
                 <input type="text" id="studentID" name="studentID" placeholder="Enter Student ID" inputmode="numeric" pattern="[0-9]+" required/><br><br>
 
                 <label for="password1" class="entry-label">Password: </label><br>
-                <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" onkeyup="checkPassword() required"><br><br>
+                <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" onkeyup="checkPassword()" required><br><br>
 
                 <div id="pw-validation-header" class="password-validation">
                     <p id="pw-validation-header2">Your password must have the following:</p>
