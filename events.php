@@ -79,23 +79,34 @@
 
     .event-card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    flex: 1;
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.4);
+    /*border: 1px solid black;*/
     transition: 0.3s;
+    padding: 8px;
+    margin: 8px;
+    
+    text-align: center;
+    justify-content: center;
     }
 
     /* On mouse-over, add a deeper shadow */
     .event-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.6);
+    }
+    .event-card img{
+      
     }
 
     /* Add some padding inside the card container */
     .event-container {
-    padding: 2px 16px;
-    margin: 10px;
-    width : 30%;
-    padding: 10px;
-    text-align: center; 
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Use 1fr to fill available width */
+      gap: 16px; /* Adjust the gap between items as needed */
+      padding: 16px;
+    
     }
+
 
 </style>
     <head>
@@ -106,15 +117,37 @@
     </head>
     <body>
         <h1>EVENTS PAGE</h1>
-        <p> TESTING </p>
 </body>
-
+<div class="event-container">
 <div class="event-card">
-  <img src="/assets/favicon.ico" alt="Placeholder" style="width:10%">
-  <div class="event-container">
-    <h4><b>John Doe</b></h4>
-    <p>Architect & Engineer</p>
+    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <div class="text-container">
+      <h4><b>John Doe</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
   </div>
+  <div class="event-card">
+    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <div class="text-container">
+      <h4><b>John Doe</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+  <div class="event-card">
+    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <div class="text-container">
+      <h4><b>John Doe</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+  <div class="event-card">
+    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <div class="text-container">
+      <h4><b>John Doe</b></h4>
+      <p>Architect & Engineer</p>
+    </div>
+  </div>
+
 </div> 
 
 </html>

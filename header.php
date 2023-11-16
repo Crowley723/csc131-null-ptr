@@ -71,6 +71,9 @@ body {
   margin:0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+.topnav-container{
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
 .topnav {
     overflow: hidden;
     background-color: var(--white);
@@ -80,6 +83,7 @@ body {
     padding: 2rem 0 2rem;
     box-sizing: border-box;
     clear: both;
+    
 }
 .container {
     width: 90%;
@@ -198,9 +202,11 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     transition: color 1s;
+    
 }
 .topnav .nav a:hover{
     color: var(--brz);
+    
 }
 .topnav .icon {
     display: none;
@@ -291,7 +297,7 @@ function checkCookie() {
 window.onload = checkCookie;
 
 </script>
-<div>
+<div class="topnav-container">
     <div class="signin-nav">
         <div id="google_translate_element" style="color: var(--white); align-content: center; float: right; margin-right: auto"></div>
         <div id="user-account" style="display: none">Hello </div>
@@ -309,7 +315,8 @@ window.onload = checkCookie;
             <a href="/faq.php">FAQ</a>
             <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
         </div>
-</div>
+  </div>
+
 <script type="text/javascript">
     function showHamburgerMenu() {
       var x = document.getElementById("topnav");
