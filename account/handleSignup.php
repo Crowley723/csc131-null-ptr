@@ -71,17 +71,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $bcryptOptions); 
     //prepared sql statement
-    $insertUserQuery = mysqli_prepare($databaseConnection, "INSERT INTO csc131.Users (`Full Name`, `Email`, `Hashed Password`, `StudentID`) VALUES (?, ?, ?, ?)");
-    mysqli_stmt_bind_param($insertUserQuery, "ssss", $fullName, $email, $hashedPassword, $studentID);
+    $findUserQuery = mysqli_prepare($databaseConnection, "INSERT INTO csc131.Users (`Full Name`, `Email`, `Hashed Password`, `StudentID`) VALUES (?, ?, ?, ?)");
+    mysqli_stmt_bind_param($findUserQuery, "ssss", $fullName, $email, $hashedPassword, $studentID);
 
-    if ($insertUserQuery->execute() === TRUE) {
+    if (mysqli_stmt_execute($findUserQuery) === TRUE) {
         echo "Signup successful!";
     } else {
-        echo "Error: " . $insertUserQuery->error;
+        echo "Error: " . $findUserQuery->error;
+        echo "User not found";
+        exit();
     }
 
     // Close the prepared statement and the database connection
-    $insertUserQuery->close();
+    mysqli_stmt_close($findUserQuery);
     $databaseConnection->close();
 }
 function validateEmail($email) {
