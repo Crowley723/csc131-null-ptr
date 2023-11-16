@@ -126,7 +126,9 @@ body {
   width : 30%;
   padding: 10px;
   text-align: center;
-  border: 3px solid green;
+  border: 1px solid green;
+  box-shadow: 3px 3px 3px grey;
+
 }
 .signup-box .entry-label {
   text-align: left;
@@ -147,7 +149,7 @@ body {
   box-sizing: border-box;
 }
 .signup-box input[type="password"] {
-  margin-bottom: 0px;
+ /* margin-bottom: 0px;*/
 }
 
 .signup-box .password-validation{
@@ -157,10 +159,31 @@ body {
   text-align: left;
   font-size: 12px;
   font-weight: bold;
+  display: none;
 }
-.password-validation ul{
+.signup-box .separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.signup-box .line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+.signup-box .text {
+  color: #ccc;
+}
+.password-validation li{
   color: red;
   margin-top: 0px;
+}
+.existingAccount {
+  font-size: 12px;
+  display: inline-block;
 }
 
 .topnav a {
@@ -190,8 +213,6 @@ body {
     float: right;
     display: block;
   }
-}
-@media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -213,6 +234,16 @@ body {
 }
 .buttonIndent {
  text-indent: 20px
+}
+button {
+  background-color: var(--spgr);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 17px;
 }
 .img { 
     max-width: 100%;
@@ -262,7 +293,8 @@ window.onload = checkCookie;
 </script>
 <div>
     <div class="signin-nav">
-        <div id="google_translate_element" style="flex: none; color: var(--white); align-content: center; float: right"></div>
+        <div id="google_translate_element" style="color: var(--white); align-content: center; float: right; margin-right: auto"></div>
+        <div id="user-account" style="display: none">Hello </div>
         <a href="/account/login.php">Sign In</a>
 
     </div>
