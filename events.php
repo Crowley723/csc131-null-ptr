@@ -110,6 +110,63 @@
     }
 
 
+    .button {
+    display: inline-block;
+    border: 1px solid;
+    border-color: var(--ssgr);
+    background: var(--ssgr);
+    padding: 10px 16px;
+    border-radius: 4px;
+    color: #dad490;
+    font-family:'Times New Roman', Times, serif;
+}
+[id^=modal] {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+[id^=modal]:target {
+    display: block;
+}
+input[type=checkbox] {
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+.popup {
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+}
+.popup__overlay {
+    position: fixed;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000b3;
+}
+.popup__wrapper {
+    position: fixed;
+    z-index: 9;
+    width: 80%;
+    max-width: 1200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    padding: 58px 32px 32px 32px;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.popup__close {
+    position: absolute;
+    top: 16px;
+    right: 26px;
+}
+
 </style>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -119,15 +176,36 @@
     </head>
     <body>
         <h1>Featured Events</h1>
-</body>
+    </body>
+
 <div class="event-container">
 <div class="event-card">
     <a href="https://www.csus.edu/">
         <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%">
 </a>
     <div class="text-container">
-      <h4><b>Event Name Event Name Event Name</b></h4>
-      <p>Location and date Location and date Location and date Location and date Location and date Location and date</p>
+      <h4><b>Event Name</b></h4>
+      <a class="button" href="#modal1">More info</a>
+
+<div class="popup" id="modal1">
+    <a class="popup__overlay" href="#"></a>
+    <div class="popup__wrapper">
+        <a class="popup__close" href="#">Click anywhere to close</a>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
+         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
+         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
+          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
+          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
+          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
+          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
+          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
+          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
+           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
+            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
+            Aliquam eleifend mi in nulla posuere.</p>
+    </div>
+</div>
     </div>
   </div>
   <div class="event-card">
@@ -136,28 +214,89 @@
     </a>
     <div class="text-container">
         <h4><b>Event Name</b></h4>
-        <p>Location and date</p>
+            <a class="button" href="#modal2">More info</a>
+    <div class="popup" id="modal2">
+        <a class="popup__overlay" href="#"></a>
+        <div class="popup__wrapper">
+            <a class="popup__close" href="#">Click anywhere to close</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
+         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
+         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
+          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
+          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
+          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
+          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
+          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
+          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
+           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
+            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
+            Aliquam eleifend mi in nulla posuere.</p>
+        </div>
+    </div>
     </div>
   </div>
+
   <div class="event-card">
     <a href="https://www.csus.edu/">
             <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%;%">
     </a>
     <div class="text-container">
         <h4><b>Event Name</b></h4>
-        <p>Location and date</p>
+        <a class="button" href="#modal3">More info</a>
+    <div class="popup" id="modal3">
+        <a class="popup__overlay" href="#"></a>
+        <div class="popup__wrapper">
+            <a class="popup__close" href="#">Click anywhere to close</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
+         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
+         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
+          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
+          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
+          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
+          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
+          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
+          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
+           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
+            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
+            Aliquam eleifend mi in nulla posuere.</p>
+        </div>
+    </div>
     </div>
   </div>
+
+
   <div class="event-card">
     <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%">
     </a>
     <div class="text-container">
         <h4><b>Event Name</b></h4>
-        <p>Location and date</p>
+        <a class="button" href="#modal4">More info</a>
+    <div class="popup" id="modal4">
+        <a class="popup__overlay" href="#"></a>
+        <div class="popup__wrapper">
+            <a class="popup__close" href="#">Click anywhere to close</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
+         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
+         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
+          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
+          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
+          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
+          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
+          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
+          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
+           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
+            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
+            Aliquam eleifend mi in nulla posuere.</p>
+        </div>
+    </div>
     </div>
   </div>
 
 </div> 
+
 
 </html>
