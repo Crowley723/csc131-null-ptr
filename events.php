@@ -69,14 +69,15 @@
   --tab-top-corners: 0.25rem 0.25rem 0 0;
   --tab-bottom-corners: 0 0 .25rem .25rem;
 }
-    h1 {
-        padding: 16px 16px 16px 16px;  
-        margin: auto;
-        width : 30%;
-        padding: 10px;
-        text-align: center; 
-    }
 
+    body {
+            background-color: #dad490;
+        }
+
+    h1 {
+        padding: 16px 16px 16px 16px;
+        text-align: center;  
+    }
     .event-card {
     /* Add shadows to create the "card" effect */
     flex: 1;
@@ -85,9 +86,10 @@
     transition: 0.3s;
     padding: 8px;
     margin: 8px;
-    
     text-align: center;
     justify-content: center;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
     }
 
     /* On mouse-over, add a deeper shadow */
@@ -116,35 +118,43 @@
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body>
-        <h1>EVENTS PAGE</h1>
+        <h1>Featured Events</h1>
 </body>
 <div class="event-container">
 <div class="event-card">
-    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <a href="https://www.csus.edu/">
+        <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%">
+</a>
     <div class="text-container">
-      <h4><b>John Doe</b></h4>
-      <p>Architect & Engineer</p>
+      <h4><b>Event Name Event Name Event Name</b></h4>
+      <p>Location and date Location and date Location and date Location and date Location and date Location and date</p>
     </div>
   </div>
   <div class="event-card">
-    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <a href="https://www.csus.edu/">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%">
+    </a>
     <div class="text-container">
-      <h4><b>John Doe</b></h4>
-      <p>Architect & Engineer</p>
+        <h4><b>Event Name</b></h4>
+        <p>Location and date</p>
     </div>
   </div>
   <div class="event-card">
-    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <a href="https://www.csus.edu/">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%;%">
+    </a>
     <div class="text-container">
-      <h4><b>John Doe</b></h4>
-      <p>Architect & Engineer</p>
+        <h4><b>Event Name</b></h4>
+        <p>Location and date</p>
     </div>
   </div>
   <div class="event-card">
-    <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:10%">
+    <a href="https://www.csus.edu/">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
+    </a>
     <div class="text-container">
-      <h4><b>John Doe</b></h4>
-      <p>Architect & Engineer</p>
+        <h4><b>Event Name</b></h4>
+        <p>Location and date</p>
     </div>
   </div>
 
