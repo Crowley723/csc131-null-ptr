@@ -14,7 +14,7 @@
     <body>
         <div class="signup-box">
             <h2>Sign up for an account!</h2>
-            <form action="/handleSignup.php" method="post" class="form-container">
+            <form action="/account/handleSignup.php" method="post" class="form-container">
 
                 <div style="display: inline-block"><label for="firstName" class="entry-label" style="float: left">Full Name: </label> <div class="existingAccount" style="float: right"><span>Already have an account? </span><a href="/account/login.php">Log In</a></div></div><br>
                 <input type="text" id="firstName" name="firstName" placeholder="Enter Full Name" required><br><br>
