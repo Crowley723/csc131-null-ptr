@@ -213,8 +213,6 @@ body {
     float: right;
     display: block;
   }
-}
-@media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
@@ -295,7 +293,8 @@ window.onload = checkCookie;
 </script>
 <div>
     <div class="signin-nav">
-        <div id="google_translate_element" style="flex: none; color: var(--white); align-content: center; float: right"></div>
+        <div id="google_translate_element" style="color: var(--white); align-content: center; float: right; margin-right: auto"></div>
+        <div id="user-account" style="display: none">Hello </div>
         <a href="/account/login.php">Sign In</a>
 
     </div>
