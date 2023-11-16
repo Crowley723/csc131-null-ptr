@@ -71,12 +71,21 @@
 }
 
     body {
-            background-color: #dad490;
+           
+        width: 100vw;
+        height: 100vh;
+        background: url('https://miro.medium.com/v2/resize:fit:1440/format:webp/1*ppeZvEyexRO_WQHK1It6Cg.jpeg');
+        background-size: cover;
+        background-attachment: fixed;
         }
 
     h1 {
         padding: 16px 16px 16px 16px;
-        text-align: center;  
+        text-align: center; 
+        background-color:#dad490;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0px;
     }
     .event-card {
     /* Add shadows to create the "card" effect */
@@ -175,13 +184,13 @@ input[type=checkbox] {
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body>
-        <h1>Featured Events</h1>
+        <h1>Explore Events Around Your Campus Today!</h1>
     </body>
 
 <div class="event-container">
 <div class="event-card">
     <a href="https://www.csus.edu/">
-        <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%">
+        <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
 </a>
     <div class="text-container">
       <h4><b>Event Name</b></h4>
@@ -191,7 +200,7 @@ input[type=checkbox] {
     <a class="popup__overlay" href="#"></a>
     <div class="popup__wrapper">
         <a class="popup__close" href="#">Click anywhere to close</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
          id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
@@ -204,13 +213,16 @@ input[type=checkbox] {
            faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
             eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
             Aliquam eleifend mi in nulla posuere.</p>
+            <p>COST: $$$$</p>
+            <p>LOCATION: ----------</p>
+            <a href="https://www.example.com">Visit event</a>
     </div>
 </div>
     </div>
   </div>
   <div class="event-card">
     <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
     </a>
     <div class="text-container">
         <h4><b>Event Name</b></h4>
@@ -219,7 +231,7 @@ input[type=checkbox] {
         <a class="popup__overlay" href="#"></a>
         <div class="popup__wrapper">
             <a class="popup__close" href="#">Click anywhere to close</a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
          id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
@@ -232,6 +244,9 @@ input[type=checkbox] {
            faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
             eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
             Aliquam eleifend mi in nulla posuere.</p>
+            <p>COST: $$$$</p>
+            <p>LOCATION: ----------</p>
+            <a href="https://www.example.com">Visit event</a>
         </div>
     </div>
     </div>
@@ -239,7 +254,7 @@ input[type=checkbox] {
 
   <div class="event-card">
     <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%;%">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
     </a>
     <div class="text-container">
         <h4><b>Event Name</b></h4>
@@ -248,7 +263,7 @@ input[type=checkbox] {
         <a class="popup__overlay" href="#"></a>
         <div class="popup__wrapper">
             <a class="popup__close" href="#">Click anywhere to close</a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            <p> DESCRIPTION:    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
          id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
@@ -261,6 +276,9 @@ input[type=checkbox] {
            faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
             eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
             Aliquam eleifend mi in nulla posuere.</p>
+            <p>COST: $$$$</p>
+            <p>LOCATION: ----------</p>
+            <a href="https://www.example.com">Visit event</a>
         </div>
     </div>
     </div>
@@ -269,7 +287,7 @@ input[type=checkbox] {
 
   <div class="event-card">
     <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:15%">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
     </a>
     <div class="text-container">
         <h4><b>Event Name</b></h4>
@@ -278,7 +296,7 @@ input[type=checkbox] {
         <a class="popup__overlay" href="#"></a>
         <div class="popup__wrapper">
             <a class="popup__close" href="#">Click anywhere to close</a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
          id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
@@ -291,6 +309,9 @@ input[type=checkbox] {
            faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
             eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
             Aliquam eleifend mi in nulla posuere.</p>
+            <p>COST: $$$$</p>
+            <p>LOCATION: ----------</p>
+            <a href="https://www.example.com">Visit event</a>
         </div>
     </div>
     </div>
