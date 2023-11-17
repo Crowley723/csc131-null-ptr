@@ -15,15 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ob_flush();
         exit;
     }
-    
     if (empty($password)) {
         echo "Password is required.";
         header("Location: /account/login.php");
         ob_flush();
         exit;
     }
-    
-
     if(!validateEmail($email)){
         echo "Invalid Email.";
         header("Location: /account/login.php");
@@ -48,15 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         //echo "<br>Connected to DB </br>";
     }
-    
-       
-    //prepared sql statement
+
     $findUserQuery = mysqli_prepare($databaseConnection, "SELECT * FROM Users WHERE `Email` = ?");
     mysqli_stmt_bind_param($findUserQuery, "s", $email);
 
     if ($findUserQuery->execute() === TRUE) {
         $userResult = mysqli_stmt_get_result($findUserQuery);
         $userData = mysqli_fetch_assoc($userResult);
+
+        mysqli_stmt_close($findUserQuery);
+        $databaseConnection->close();
+
         if ($userData){
             $hashedPassword = $userData['Hashed Password'];
             $email = $userData['Email'];
@@ -84,15 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ob_flush();
             exit();
         }
-        
     } else {
         echo "Error: " . $findUserQuery->error;
         exit();
     }
-
-    // Close the prepared statement and the database connection
-    mysqli_stmt_close($findUserQuery);
-    $databaseConnection->close();
 }
 function validateEmail($email) {
     // Define a regular expression for basic email validation
@@ -138,8 +132,4 @@ function validateStudentID($studentID) {
         return false; // Invalid email
     }
 }
-
-
-
-
 ?>
