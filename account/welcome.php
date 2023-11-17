@@ -1,5 +1,8 @@
 <?php 
 session_start();
+if(!isset($_SESSION['Email']) && !isset($_SESSION['FullName'])){
+    header("Location: /index.php");
+}
 
 ?>
 <!DOCTYPE html>
@@ -17,6 +20,9 @@ session_start();
     </head>
     <body>
         <h1>You're Logged In!</h1>
-        <br>Welcome <?php echo $_SESSION['FullName'];?>!</br>
+        
+        <br>Welcome <?php echo $_SESSION['FullName']; ?>!</br>
+        
+        
 </body>
 </html>
