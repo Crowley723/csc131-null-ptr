@@ -123,7 +123,7 @@ body {
 }
 .signup-box {
   margin: auto;
-  width : 30%;
+  width : 25%;
   padding: 10px;
   text-align: center;
   border: 1px solid green;
