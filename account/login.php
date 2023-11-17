@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
+    // Redirect to welcome page
+    header("Location: /account/welcome.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <style>
