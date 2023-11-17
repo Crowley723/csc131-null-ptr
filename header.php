@@ -254,7 +254,6 @@ button {
     box-sizing: content-box;
     line-height: 30px;
     display: inline-flex;
-    flex: 0 0 35%;
 }
 
 </style>
