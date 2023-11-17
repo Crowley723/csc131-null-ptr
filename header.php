@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <style>
 :root {
   --rwgr: #043124;
@@ -74,7 +75,6 @@ body {
 .topnav {
     overflow: hidden;
     background-color: var(--white);
-    max-width: 1240px;
     margin-left: auto;
     margin-right: auto; 
     padding: 2rem 0 2rem;
@@ -90,7 +90,7 @@ body {
 }
 .signin-box{
   margin: auto;
-  width: 30%;
+  width: 25%;
   text-align: center;
   border: 3px solid green;
   padding: 10px;
@@ -245,11 +245,11 @@ button {
   width: 100%;
   font-size: 17px;
 }
-.img { 
+.topnav .img { 
     max-width: 100%;
-    width: 45%;
     min-width: 180px;
-    vertical-align: middle;
+    width: 45%;
+
     border-style: none;
     box-sizing: content-box;
     line-height: 30px;
@@ -291,6 +291,7 @@ function checkCookie() {
 window.onload = checkCookie;
 
 </script>
+
 <div>
     <div class="signin-nav">
         <div id="google_translate_element" style="color: var(--white); align-content: center; float: right; margin-right: auto"></div>
