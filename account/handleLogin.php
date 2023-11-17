@@ -3,31 +3,37 @@ $DBhostname = getenv("SQLHOSTNAME");
 $usersDB = getenv("CSC131USERDBNAME");
 $DBusername = getenv("CSC131USERDBUSER");
 $DBpassword = getenv("CSC131USERDBPASS");
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    
+    ob_start();    
     $email = $_POST["email"];
     $password = $_POST["password1"];
     
     if (empty($email)) {
         echo "Email is required.";
+        ob_flush();
         exit;
     }
     
     if (empty($password)) {
         echo "Password is required.";
+        header("Location: /account/login.php");
+        ob_flush();
         exit;
     }
     
 
     if(!validateEmail($email)){
         echo "Invalid Email.";
+        header("Location: /account/login.php");
+        ob_flush();
         exit();
     }
     if(!passwordMatchesPattern($password)){
         echo "Invalid Password.";
-        echo $password;
+        
+        ob_flush();
         exit();
     }
 
@@ -37,9 +43,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: Unable to connect to MySQL." . PHP_EOL;
         echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
         echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        ob_flush();
         exit;
     }else{
-        echo "<br>Connected to DB </br>";
+        //echo "<br>Connected to DB </br>";
     }
     
        
@@ -61,11 +68,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['FullName'] = $fullName;
             
                 echo "<br>User " . $_SESSION['FullName'] . " Logged In! </br>";
+                header("Location: /account/welcome.php");
+                ob_flush();
+                exit(); 
                 // Other user-related information can be stored in session variables as needed
             } else {
-
+                $_SESSION['login_error'] = "Invalid username or password.";
+                header("Location: /account/login.php");
+                ob_flush();
+                exit();
             }
         }else{
+            $_SESSION['login_error'] = "Invalid username or password.";
+            header("Location: /account/login.php");
+            ob_flush();
             exit();
         }
         
