@@ -176,6 +176,14 @@ input[type=checkbox] {
     right: 26px;
 }
 
+.center-align-link {
+            text-align: center;
+            font-size: 20px;
+            padding: 16px 16px 16px 16px;
+            color: #dad490;
+        }
+        
+
 </style>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -184,7 +192,9 @@ input[type=checkbox] {
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body>
-        <h1>Explore Events Around Your Campus Today!</h1>
+        <h1>Explore Events Around Your Campus Today!     <div class="center-align-link">
+        <a href="https://catalog.csus.edu/academic-calendar/">View Campus Calendar</a>
+    </div></h1>
     </body>
 
 <div class="event-container">
@@ -199,7 +209,7 @@ input[type=checkbox] {
 <div class="popup" id="modal1">
     <a class="popup__overlay" href="#"></a>
     <div class="popup__wrapper">
-        <a class="popup__close" href="#">Click anywhere to close</a>
+        <a class="popup__close" href="#">Close</a>
         <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
@@ -230,7 +240,7 @@ input[type=checkbox] {
     <div class="popup" id="modal2">
         <a class="popup__overlay" href="#"></a>
         <div class="popup__wrapper">
-            <a class="popup__close" href="#">Click anywhere to close</a>
+            <a class="popup__close" href="#">Close</a>
             <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
@@ -262,7 +272,7 @@ input[type=checkbox] {
     <div class="popup" id="modal3">
         <a class="popup__overlay" href="#"></a>
         <div class="popup__wrapper">
-            <a class="popup__close" href="#">Click anywhere to close</a>
+            <a class="popup__close" href="#">Close</a>
             <p> DESCRIPTION:    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
@@ -295,7 +305,7 @@ input[type=checkbox] {
     <div class="popup" id="modal4">
         <a class="popup__overlay" href="#"></a>
         <div class="popup__wrapper">
-            <a class="popup__close" href="#">Click anywhere to close</a>
+            <a class="popup__close" href="#">Close</a>
             <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
          ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
          Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
