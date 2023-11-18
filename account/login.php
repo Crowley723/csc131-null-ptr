@@ -43,7 +43,7 @@ ob_flush();
                 if(isset($_SESSION['InvalidPassword']) && $_SESSION['InvalidPassword'] === TRUE){
                     echo "<p style=\"color:red;\">Your password is of the incorrect format.</p>";
                 }
-                if((isset($_SESSION['WrongPassword']) && $_SESSION['WrongPassword'] === TRUE) || (isset($_SESSION['WrongEmail']) && $_SESSION['WrongEmail'] === TRUE)){
+                if(isset($_SESSION['WrongCredentials']) && $_SESSION['WrongCredentials'] === TRUE){
                     echo "<p style=\"color:red;\">Invalid email or password. Please try again.</p>";
                 }
 

@@ -12,28 +12,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($email)) {
         echo "Email is required.";
-        $_SESSION['NeedEmail'] = true;
+        $_SESSION['NeedEmail'] = TRUE;
         header("Location: /account/login.php");
         ob_flush();
         exit;
     }
     if (empty($password)) {
         echo "Password is required.";
-        $_SESSION['NeedPassword'] = true;
+        $_SESSION['NeedPassword'] = TRUE;
         header("Location: /account/login.php");
         ob_flush();
         exit;
     }
     if(!validateEmail($email)){
         echo "Invalid Email.";
-        $_SESSION['InvalidEmail'] = true;
+        $_SESSION['InvalidEmail'] = TRUE;
         header("Location: /account/login.php");
         ob_flush();
         exit();
     }
     if(!passwordMatchesPattern($password)){
         echo "Invalid Password.";
-        $_SESSION['InvalidPassword'] = true;
+        $_SESSION['InvalidPassword'] = TRUE;
         header("Location: /account/login.php");
         ob_flush();
         exit();
@@ -77,13 +77,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit(); 
                 // Other user-related information can be stored in session variables as needed
             } else {
-                $_SESSION['login_error'] = "Invalid username or password.";
+                $_SESSION['WrongCredentials'] = TRUE;
                 header("Location: /account/login.php");
                 ob_flush();
                 exit();
             }
         }else{
-            $_SESSION['login_error'] = "Invalid username or password.";
+            $_SESSION['WrongCredentials'] = TRUE;
             header("Location: /account/login.php");
             ob_flush();
             exit();
