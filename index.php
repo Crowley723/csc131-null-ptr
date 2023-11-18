@@ -1,3 +1,4 @@
+<?php include("./header.php") ?>
 <!DOCTYPE html>
 <style>
 body p {
@@ -11,7 +12,7 @@ body p {
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home</title>
-        <?php include("./header.php") ?>
+        
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
         
     </head>
