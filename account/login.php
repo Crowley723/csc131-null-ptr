@@ -17,9 +17,6 @@ ob_flush();
     h1 {
         padding: 16px 16px 16px 16px;   
     }
-    .signup-box a{
-
-    }
     
     
 </style>
@@ -54,7 +51,7 @@ ob_flush();
             </div>
             <form action="/account/handleLogin.php" method="post" class="form-container">
 
-                <div style="display: inline-block"><label for="email" class="entry-label" style="float: left">Email: </label> <div class="existingAccount" style="float: right"><span>Need an account? </span><a href="/account/signup.php">Sign up</a></div></div><br>
+                <label for="email" class="entry-label">Email: </label> 
                 <input type="email" id="email" name="email" placeholder="Enter Email" required><br><br>
 
                 <label for="password1" class="entry-label">Password: </label><br>
@@ -67,11 +64,13 @@ ob_flush();
 
                 <button id="submit">Submit</button>
             </form>
-            <!--div class="separator">
+            <div class="separator">
                 <div class="line"></div>
                 <div class="text">OR</div>
                 <div class="line"></div>
-            </div//-->
+            </div>
+            <div class="existingAccount" style="float: center"><span>Need an account? </span><a class="signup-button" href="/account/signup.php">Sign up</a></div></div>
+
         </div>
     </body>
 </body>

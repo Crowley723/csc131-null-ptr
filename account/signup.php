@@ -5,6 +5,7 @@
     h1 {
         padding: 16px 16px 16px 16px;   
     }
+    
 </style>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,15 +18,37 @@
             <h2>Sign up for an account!</h2>
                 <div class="error-message">
                 <?php 
+                if(isset($_SESSION['NeedName']) && $_SESSION['NeedName'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your name.</p>";
+                }
                 if(isset($_SESSION['NeedEmail']) && $_SESSION['NeedEmail'] === TRUE){
                     echo "<p style=\"color:red;\">You must include your email.</p>";
+                }
+                if(isset($_SESSION['NeedPassword']) && $_SESSION['NeedPassword'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your password.</p>";
+                }
+                if(isset($_SESSION['NeedStudentID']) && $_SESSION['NeedStudentID'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your student ID.</p>";
+                }
+
+                if(isset($_SESSION['InvalidName']) && $_SESSION['InvalidName'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid Name</p>";
+                }
+                if(isset($_SESSION['InvalidEmail']) && $_SESSION['InvalidEmail'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid Email</p>";
+                }
+                if(isset($_SESSION['InvalidPassword']) && $_SESSION['InvalidPassword'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid Password</p>";
+                }
+                if(isset($_SESSION['InvalidStudentID']) && $_SESSION['InvalidStudentID'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid StudentId</p>";
                 }
                 ?>
 
                 </div>
             <form action="/account/handleSignup.php" method="post" class="form-container">
 
-                <div style="display: inline-block"><label for="firstName" class="entry-label" style="float: left">Full Name: </label> <div class="existingAccount" style="float: right"><span>Already have an account? </span><a href="/account/login.php">Log In</a></div></div><br>
+                <label for="firstName" class="entry-label" style="float: left">Full Name: </label> 
                 <input type="text" id="firstName" name="firstName" placeholder="Enter Full Name" required><br><br>
 
                 <label for="email" class="entry-label">Email: </label><br>
@@ -50,16 +73,18 @@
                 <label for="password2" class="entry-label">Retype Password: </label><br>
                 <input type="password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Retype Password" onkeyup="matchPasswords()" required><br><br>
                 <div id="retype-password" class="password-validation">
-                    <br>Your passwords do not match.</br>
+                    <br style="color:red">Your passwords do not match.</br>
                 </div>
 
                 <button id="submit">Submit</button>
             </form>
-            <!--div class="separator">
+            <div class="separator">
                 <div class="line"></div>
                 <div class="text">OR</div>
                 <div class="line"></div>
-            </div//-->
+            </div>
+            <div class="existingAccount" style="float: center"><span>Already have an account? </span><a class="signup-button" href="/account/login.php">Log In</a></div></div><br>
+            
         </div>
     </body>
     <script>
