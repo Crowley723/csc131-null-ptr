@@ -15,6 +15,14 @@
     <body>
         <div class="signup-box">
             <h2>Sign up for an account!</h2>
+                <div class="error-message">
+                <?php 
+                if(isset($_SESSION['NeedEmail']) && $_SESSION['NeedEmail'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your email.</p>";
+                }
+                ?>
+
+                </div>
             <form action="/account/handleSignup.php" method="post" class="form-container">
 
                 <div style="display: inline-block"><label for="firstName" class="entry-label" style="float: left">Full Name: </label> <div class="existingAccount" style="float: right"><span>Already have an account? </span><a href="/account/login.php">Log In</a></div></div><br>
