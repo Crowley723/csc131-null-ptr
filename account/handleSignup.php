@@ -12,54 +12,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["password1"];
     $studentID = $_POST["studentID"];
+
     if (empty($fullName)) {
         echo "Full Name is required.";
+        $_SESSION['NeedName'] = TRUE;
         header(("Location: /account/signup.php"));
         ob_flush();
         exit;
     }
-    
     if (empty($email)) {
         echo "Email is required.";
-        $_SESSION['NeedEmail'] = true;
+        $_SESSION['NeedEmail'] = TRUE;
         header(("Location: /account/signup.php"));
         ob_flush();
         exit;
     }
-    
     if (empty($password)) {
         echo "Password is required.";
+        $_SESSION['NeedPassword'] = TRUE;
         header(("Location: /account/signup.php"));
         ob_flush();
         exit;
     }
-    
     if (empty($studentID)) {
         echo "Student ID is required.";
-        $_SESSION['NeedStudentID'] = true;
+        $_SESSION['NeedStudentID'] = TRUE;
         header(("Location: /account/signup.php"));
         ob_flush();
         exit;
     }
 
-    
     if(!validateName($fullName)){
         echo "Invalid Name.";
-        $_SESSION['NeedStudentID'] = true;
+        $_SESSION['InvalidName'] = TRUE;
         header(("Location: /account/signup.php"));
         exit();
     }
     if(!validateEmail($email)){
         echo "Invalid Email.";
+        $_SESSION['InvalidEmail'] = TRUE;
+        header(("Location: /account/signup.php"));
         exit();
     }
     if(!passwordMatchesPattern($password)){
         echo "Invalid Password.";
-        echo $password;
+        $_SESSION['InvalidPassword'] = TRUE;
+        header(("Location: /account/signup.php"));
         exit();
     }
     if(!validateStudentID($studentID)){
         echo "Invalid StudentID.";
+        $_SESSION['InvalidStudentID'] = TRUE;
+        header(("Location: /account/signup.php"));
         exit();
     }
 
