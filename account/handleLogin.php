@@ -12,24 +12,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (empty($email)) {
         echo "Email is required.";
+        $_SESSION['NeedEmail'] = true;
+        header("Location: /account/login.php");
         ob_flush();
         exit;
     }
     if (empty($password)) {
         echo "Password is required.";
+        $_SESSION['NeedPassword'] = true;
         header("Location: /account/login.php");
         ob_flush();
         exit;
     }
     if(!validateEmail($email)){
         echo "Invalid Email.";
+        $_SESSION['InvalidEmail'] = true;
         header("Location: /account/login.php");
         ob_flush();
         exit();
     }
     if(!passwordMatchesPattern($password)){
         echo "Invalid Password.";
-        
+        $_SESSION['InvalidPassword'] = true;
+        header("Location: /account/login.php");
         ob_flush();
         exit();
     }
