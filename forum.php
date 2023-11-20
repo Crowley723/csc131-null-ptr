@@ -12,9 +12,57 @@
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
         <script src="https://kit.fontawesome.com/31806d8454.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script src="style.js" defer></script>
+        <link rel="stylesheet" href="fourmStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
+
+    <script>
+        jQuery(document).ready(function(){
+            getPosts();
+        });
+        function getPosts(){
+            $.ajax({
+                url:'/getForumPosts.php',
+                type:'GET',
+                dataType: 'json',
+                success: function(data){
+                    updatePage(data);
+
+                }, error(xhr, status, error){
+                    console.log(status + ': ' + error);
+                };
+            });
+        }
+        function updatePage(data){
+            if(data.length > 0 && data != null){
+                for(var i = data.length - 1; i >= 0; i--){
+                    var post = data[i];
+                    if(post.hasOwnProperty('AUTHOR') && 
+                    post.hasOwnProperty('POST BODY') && 
+                    post.hasOwnProperty('LIKES') &&
+                    post.hasOwnProperty('TIMESTAMP')){
+                        const postContainer = document.createElement("div");
+                        postContainer.className = 'post-container';
+                        cosnt mainContent = getElementById('main-content');
+                        mainContent.appendChild(postContainer);
+
+                        const userProfile = document.createElement("div");
+                        userProfile.className = 'user-profile';
+                        postContainer.appendChild(userProfile);
+
+                        const profileImage = document.createElement("img");
+                        profileImage.src = post['IMAGE PATH'];
+                        userProfile.appendChild(profileImage);
+
+                        const profileName = document.createElement("p");
+                        const timeStamp = document.createElement("span");
+                        const postContainer = document.createElement("div");
+                    }
+                }
+            }
+        }
+    </script>
+
     <body>
        <!-- <h1>COMMUNITY FORUM</h1> 
         <p>test</p> -->
@@ -37,9 +85,8 @@
 
             </div>
         <!-------- main-content -------- --> 
-            <div class="main-content">
-
-                <div class="post-container" data-post-id="7712">
+            <div class="main-content" id="main-content">
+                <div class="post-container">
                 <div class="user-profile">
                         <img src="images/profile-pic.png">
                         <div>
