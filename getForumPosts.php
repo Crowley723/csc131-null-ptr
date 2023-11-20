@@ -26,12 +26,14 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
                 $row_AUTHOR = $row["AUTHOR"];
                 $row_POST_BODY = $row["POST BODY"];
                 $row_LIKES = $row["LIKES"];
+                $row_IMAGE_PATH = $row["IMAGE PATH"];
                 $row_TIMESTAMP = $row["TIMESTAMP"];
                 $outputData[] = array(
                     'ID' => $row_ID,
                     'AUTHOR' => $row_AUTHOR,
                     'POST BODY' => $row_POST_BODY,
                     'LIKES' => $row_LIKES,
+                    'IMAGE PATH' => $row_IMAGE_PATH,
                     'TIMESTAMP' => $row_TIMESTAMP
                 );
             }
