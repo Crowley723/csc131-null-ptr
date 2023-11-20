@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
             throw new Exception("Database Connection Error, Error No.: ".$databaseConnection->connect_errno." | ".$databaseConnection->connect_error);
         }
 
-        $getForumPostsQuery = "SELECT * FROM `forum-posts`";
+        $getForumPostsQuery = "SELECT * FROM `forum-posts` ORDER BY TIMESTAMP";
         //echo " Before postResult";
         //echo $getForumPostsQuery;
         if($postsResult = $databaseConnection->query($getForumPostsQuery)){
