@@ -18,49 +18,71 @@
 
     <script>
         jQuery(document).ready(function(){
-            getPosts();
-        });
-        function getPosts(){
-            $.ajax({
-                url:'/getForumPosts.php',
-                type:'GET',
-                dataType: 'json',
-                success: function(data){
-                    updatePage(data);
+    getPosts();
+});
 
-                }, error(xhr, status, error){
-                    console.log(status + ': ' + error);
-                };
-            });
+function getPosts(){
+    $.ajax({
+        url:'/getForumPosts.php',
+        type:'GET',
+        dataType: 'json',
+        success: function(data){
+            updatePage(data);
+        },
+        error: function(xhr, status, error){
+            console.log(status + ': ' + error);
         }
-        function updatePage(data){
-            if(data.length > 0 && data != null){
-                for(var i = data.length - 1; i >= 0; i--){
-                    var post = data[i];
-                    if(post.hasOwnProperty('AUTHOR') && 
-                    post.hasOwnProperty('POST BODY') && 
-                    post.hasOwnProperty('LIKES') &&
-                    post.hasOwnProperty('TIMESTAMP')){
-                        const postContainer = document.createElement("div");
-                        postContainer.className = 'post-container';
-                        cosnt mainContent = getElementById('main-content');
-                        mainContent.appendChild(postContainer);
+    });
+}
 
-                        const userProfile = document.createElement("div");
-                        userProfile.className = 'user-profile';
-                        postContainer.appendChild(userProfile);
+function updatePage(data){
+    if(data && data.length > 0){  // Check if data is not null and has items
+        for(var i = data.length - 1; i >= 0; i--){
+            var post = data[i];
+            if(post.hasOwnProperty('AUTHOR') && 
+                post.hasOwnProperty('POST BODY') && 
+                post.hasOwnProperty('LIKES') &&
+                post.hasOwnProperty('TIMESTAMP')){
 
-                        const profileImage = document.createElement("img");
-                        profileImage.src = post['IMAGE PATH'];
-                        userProfile.appendChild(profileImage);
+                const postContainer = document.createElement("div");
+                postContainer.className = 'post-container';
+                const mainContent = document.getElementById('main-content');
+                mainContent.appendChild(postContainer);
 
-                        const profileName = document.createElement("p");
-                        const timeStamp = document.createElement("span");
-                        const postContainer = document.createElement("div");
-                    }
-                }
+                const userProfile = document.createElement("div");
+                userProfile.className = 'user-profile';
+                postContainer.appendChild(userProfile);
+
+                const profileImage = document.createElement("img");
+                profileImage.src = post['IMAGE PATH']; // Make sure 'IMAGE PATH' property exists in your data
+                userProfile.appendChild(profileImage);
+
+                const profileName = document.createElement("p");
+                profileName.textContent = post['AUTHOR']; // Assuming 'AUTHOR' is a property in your data
+                userProfile.appendChild(profileName);
+
+                const timeStamp = document.createElement("span");
+                timeStamp.textContent = post['TIMESTAMP']; // Assuming 'TIMESTAMP' is a property in your data
+                userProfile.appendChild(timeStamp);
+
+                const postText = document.createElement("p");
+                postText.className = 'post-text';
+                postText.textContent = post['POST BODY']; // Assuming 'POST BODY' is a property in your data
+                postContainer.appendChild(postText);
+
+                const activityIcons = document.createElement("div");
+                activityIcons.className = 'activity-icons';
+                postContainer.appendChild(activityIcons);
+
+                const thumbsUpIcon = document.createElement("span");
+                thumbsUpIcon.className = 'post-rating-button material-icons';
+                thumbsUpIcon.textContent = 'thumb_up';
+                activityIcons.appendChild(thumbsUpIcon);
             }
         }
+    }
+}
+
     </script>
 
     <body>
