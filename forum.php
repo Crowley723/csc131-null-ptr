@@ -46,6 +46,7 @@ function updatePage(data){
 
                 const postContainer = document.createElement("div");
                 postContainer.className = 'post-container';
+                postContainer.id = post['ID'];
                 const mainContent = document.getElementById('main-content');
                 mainContent.appendChild(postContainer);
 
