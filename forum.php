@@ -14,12 +14,13 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="fourmStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="forumScript.js"></script>
     </head>
 
     <script>
-        jQuery(document).ready(function(){
-    getPosts();
-});
+    jQuery(document).ready(function(){
+        getPosts();
+    });
 
 function getPosts(){
     $.ajax({
@@ -87,18 +88,10 @@ function updatePage(data){
     </script>
 
     <body>
-       <!-- <h1>COMMUNITY FORUM</h1> 
-        <p>test</p> -->
-
+        <!--<h1>Community Fourm</h1>-->
         <nav>
             <div class="nav-left">
                 <h1>Community Fourm</h1>
-            </div>
-            <div class="nav-right">
-                <div class="nav-user-icon online">
-                    <img src="images/profile-pic.png">
-                </div>
-
             </div>
         </nav>
 
@@ -120,7 +113,11 @@ function updatePage(data){
                     <p class="post-text">Making websites suck</p>
                     <div class="post-row">
                         <div class="activity-icons">
-                        <span class="post-rating-button material-icons">thumb_up</span>
+                        <!-- Thumbs Up Button -->
+                            <div class="like-button">
+                                <button onclick="toggleLike(1)" id="likeBtn1" class="like-btn">👍</button>
+                                <span id="likeCount1" class="like-count">0</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,7 +132,11 @@ function updatePage(data){
                     <p class="post-text">Sac State has the worst cs department</p>
                     <div class="post-row">
                         <div class="activity-icons">
-                        <span class="post-rating-button material-icons">thumb_up</span>
+                        <!-- Thumbs Up Button -->
+                        <div class="like-button">
+                                <button onclick="toggleLike(2)" id="likeBtn2" class="like-btn">👍</button>
+                                <span id="likeCount2" class="like-count">0</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -143,9 +144,21 @@ function updatePage(data){
             </div>
         <!-------- right-sidebar -------- --> 
             <div class="right-sidebar">
-                <div class="sidebar-title">
+                <!--<div class="sidebar-title">
                     <a href="#"><i class="fa-solid fa-square-plus fa-2xl"></i><p>Add Post</p></a>
                 </div>
+                </div>-->
+                <!-- Post Button -->
+                <button class="post-button" onclick="openModal()">Post</button>
+
+                <!-- Modal -->
+                <div id="postModal" class="modal">
+                    <div class="modal-content">
+                        <h2>Post Something</h2>
+                        <textarea id="postText" placeholder="Type your post here"></textarea>
+                        <button onclick="submitPost()">Submit</button>
+                        <button onclick="closeModal()">Cancel</button>
+                    </div>
                 </div>
         </div>
 
