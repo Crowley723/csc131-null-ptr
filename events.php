@@ -87,6 +87,7 @@
         font-family: Arial, Helvetica, sans-serif;
         margin: 0px;
     }
+    
     .event-card {
     /* Add shadows to create the "card" effect */
     flex: 1;
@@ -176,11 +177,25 @@ input[type=checkbox] {
     right: 26px;
 }
 
-.center-align-link {
+.link-box {
+            display: inline-block;
             text-align: center;
-            font-size: 20px;
-            padding: 16px 16px 16px 16px;
-            color: #dad490;
+            padding: 16px;
+            background-color: var(--ssgr);  /* change as needed */
+            color: #dad490;  /* change as needed */
+            text-decoration: none;
+            width: 15%;  /* change as needed */
+            border-radius: 5px; /* rounded corners */
+            gap: 16px; /* Adjust the gap between items as needed */
+            padding: 16px;
+        }
+        .right-align {
+            text-align: right;
+            padding: 10px;
+        }
+        .link-box:hover {
+            background-color: #dad490;  /* change as needed */
+            color: var(--ssgr);
         }
         
 
@@ -192,9 +207,11 @@ input[type=checkbox] {
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body>
-        <h1>Explore Events Around Your Campus Today!     <div class="center-align-link">
-        <a href="https://catalog.csus.edu/academic-calendar/">View Campus Calendar</a>
-    </div></h1>
+        <h1>Explore Events Around Your Campus Today!</h1><div class="right-align" style="padding-right: 23px;">
+        <a class="link-box" href="https://catalog.csus.edu/academic-calendar/">
+            CSUS Calendar 
+        </a>
+    </div>
     </body>
 
 <div class="event-container">
