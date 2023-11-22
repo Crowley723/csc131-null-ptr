@@ -35,6 +35,21 @@ function getPosts(){
         }
     });
 }
+function likePost(){
+    //need to get id of parent post to increment likes.
+
+    $.ajax({
+        url:'/handleLikePost.php',
+        type:'POST',
+        dataType: 'json',
+        success: function(data){
+            updatePage(data);
+        },
+        error: function(xhr, status, error){
+            console.log(status + ': ' + error);
+        }
+    });
+}
 
 function updatePage(data){
     if(data && data.length > 0){  // Check if data is not null and has items
