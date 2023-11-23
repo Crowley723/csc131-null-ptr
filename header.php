@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<!DOCTYPE html>
 <style>
 :root {
   --rwgr: #043124;
@@ -124,7 +125,7 @@ body {
 .signup-box {
   margin: auto;
   width : 25%;
-  padding: 10px;
+  padding: 20px 10px 50px;
   text-align: center;
   border: 1px solid green;
   box-shadow: 3px 3px 3px grey;
@@ -141,7 +142,7 @@ body {
   margin-bottom: 0;
 
 }
-.signup-box input {
+.signup-box input:not([type="checkbox"]) {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -169,6 +170,7 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
+  padding: 10px 0;
 }
 
 .signup-box .line {
@@ -404,7 +406,7 @@ $(document).ready(function() {
             </div>
           </div>";
   } else{
-    echo "<a href=\"/account/login.php\">Sign In</a>";
+    echo "<a href=\"/account/login.php\">Log In</a>";
   }
   ?>  
 
