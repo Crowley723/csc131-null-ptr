@@ -118,6 +118,7 @@ nav .nav-left h1{
 }
 /* Styling for the modal */
 .modal {
+    text-align: center;
     display: none;
     position: fixed;
     top: 0;
@@ -369,4 +370,25 @@ nav .nav-left h1{
     margin-left: 5px;
     font-weight: bold;
   }
-  
+  .cancelbtn {
+    background-color: #f44336;
+    color: white;
+  }
+  input[type=submit]{
+    width: 100%;
+    font-size: medium;
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer
+  }
+  .modal-content h2{
+    padding: 10px;
+    color: black;
+  }
+  .modal-content textarea{
+    resize: none;
+  }

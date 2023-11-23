@@ -90,92 +90,96 @@ function updatePage(data){
                 const activityIcons = document.createElement("div");
                 activityIcons.className = 'activity-icons';
                 postContainer.appendChild(activityIcons);
-
-                const thumbsUpIcon = document.createElement("span");
-                thumbsUpIcon.className = 'post-rating-button material-icons';
-                thumbsUpIcon.textContent = 'thumb_up';
+                /*
+                const thumbsUpIcon = document.createElement("button");
+                thumbsUpIcon.id = 'likeBtn2';
+                thumbsUpIcon.className = 'like-btn';
+                thumbsUpIcon.textContent = '👍';
                 activityIcons.appendChild(thumbsUpIcon);
+
+                const thumbsUpCounter = document.createElement("span");
+                thumbsUpCounter.className = 'like-count';
+                thumbsUpCounter.textContent = '0';
+                activityIcons.appendChild(thumbsUpCounter);
+                */
             }
         }
     }
 }
 
-    </script>
+</script>
 
-    <body>
-        <!--<h1>Community Fourm</h1>-->
-        <nav>
-            <div class="nav-left">
-                <h1>Community Fourm</h1>
-            </div>
-        </nav>
-
-        <div class="container">
-        <!-------- left-sidebar -------- -->    
-            <div class="left-sidebar">
-
-            </div>
-        <!-------- main-content -------- --> 
-            <div class="main-content" id="main-content">
-                <div class="post-container">
-                <div class="user-profile">
-                        <img src="images/profile-pic.png">
-                        <div>
-                            <p>Carol Jones</p>
-                            <span>October 19 2023, 3:23 pm</span>
-                        </div>
-                    </div>
-                    <p class="post-text">Making websites suck</p>
-                    <div class="post-row">
-                        <div class="activity-icons">
-                        <!-- Thumbs Up Button -->
-                            <div class="like-button">
-                                <button onclick="toggleLike(1)" id="likeBtn1" class="like-btn">👍</button>
-                                <span id="likeCount1" class="like-count">0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="post-container">
-                <div class="user-profile">
-                        <img src="images/member-1.png">
-                        <div>
-                            <p>Scarlett</p>
-                            <span>june 06 2023, 6:66 pm</span>
-                        </div>
-                    </div>
-                    <p class="post-text">Sac State has the worst cs department</p>
-                    <div class="post-row">
-                        <div class="activity-icons">
-                        <!-- Thumbs Up Button -->
-                        <div class="like-button">
-                                <button onclick="toggleLike(2)" id="likeBtn2" class="like-btn">👍</button>
-                                <span id="likeCount2" class="like-count">0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        <!-------- right-sidebar -------- --> 
-            <div class="right-sidebar">
-                <!--<div class="sidebar-title">
-                    <a href="#"><i class="fa-solid fa-square-plus fa-2xl"></i><p>Add Post</p></a>
-                </div>
-                </div>-->
-                <!-- Post Button -->
-                <button class="post-button" onclick="openModal()">Post</button>
-
-                <!-- Modal -->
-                <div id="postModal" class="modal">
-                    <div class="modal-content">
-                        <h2>Post Something</h2>
-                        <textarea id="postText" placeholder="Type your post here"></textarea>
-                        <button onclick="submitPost()">Submit</button>
-                        <button onclick="closeModal()">Cancel</button>
-                    </div>
-                </div>
+<body>
+    <!--<h1>Community Fourm</h1>-->
+    <nav>
+        <div class="nav-left">
+            <h1>Community Fourm</h1>
         </div>
+    </nav>
+
+    <div class="container">
+    <!-------- left-sidebar -------- -->    
+    <div class="left-sidebar">
+
+    </div>
+    <!-------- main-content -------- --> 
+    <div class="main-content" id="main-content">
+        <div class="post-container">
+        <div class="user-profile">
+                <img src="images/profile-pic.png">
+                <div>
+                    <p>Carol Jones</p>
+                    <span>October 19 2023, 3:23 pm</span>
+                </div>
+            </div>
+            <p class="post-text">Making websites suck</p>
+            <div class="post-row">
+                <div class="activity-icons">
+                <!-- Thumbs Up Button -->
+                <div class="like-button">
+                    <button onclick="toggleLike(1)" id="likeBtn1" class="like-btn">👍</button>
+                    <span id="likeCount1" class="like-count">0</span>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="post-container">
+        <div class="user-profile">
+                <img src="images/member-1.png">
+                <div>
+                    <p>Scarlett</p>
+                    <span>june 06 2023, 6:66 pm</span>
+                </div>
+            </div>
+            <p class="post-text">Sac State has the worst cs department</p>
+            <div class="post-row">
+                <div class="activity-icons">
+                <!-- Thumbs Up Button -->
+                    <div class="like-button">
+                        <button onclick="toggleLike(2)" id="likeBtn2" class="like-btn">👍</button>
+                        <span id="likeCount2" class="like-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------- right-sidebar -------- --> 
+    <div class="right-sidebar">
+        <!-- Post Button -->
+        <button class="post-button" onclick="openModal()">Post</button>
+
+        <!-- Modal -->
+        <div id="postModal" class="modal">
+            <div class="modal-content">
+                <h2>Share Your Thoughts</h2>
+                <form action="/addPost.php" method="POST">
+                    <textarea id="postText" placeholder="Type your post here" required></textarea>
+                    <input type="submit">
+                    <button type="button" onclick="closeModal()" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
