@@ -68,7 +68,7 @@ function generateIdenticon($identifier, $size = 128) {
 
 // Get the email from the session
 session_start();
-$email = isset($_GET['email']) ? $_GET['email'] : 'default';
+$email = isset($_SESSION['Email']) ? $_SESSION['Email'] : 'default';
 
 // Generate and display the identicon
 generateIdenticon($email);
