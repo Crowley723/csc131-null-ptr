@@ -74,28 +74,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $databaseConnection = mysqli_connect($DBhostname, $DBusername, $DBpassword, $usersDB);
 
-    if (!$databaseConnection) {
-        echo "Error: Unable to connect to MySQL." . PHP_EOL;
-        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-        exit;
-    }else{
-        //echo 'Connected to DB';
+    if ($databaseConnection->connect_error) {
+        http_response_code(500);
+        ob_flush();
+        throw new Exception("Database Connection Error, Error No.: ".$databaseConnection->connect_errno." | ".$databaseConnection->connect_error);
     }
+
     $bcryptOptions = [ 
         'cost' => 12, 
     ]; 
-      
+
+    $findExistingUserQuery = mysqli_prepare($databaseConnection, "Select `Email` FROM csc131.Users where `Email` = ?");
+    mysqli_stmt_bind_param($findExistingUserQuery, "s", $email);
+
+    if(mysqli_stmt_execute($findExistingUserQuery) === TRUE){
+        mysqli_stmt_bind_result($findExistingUserQuery, $resultEmail);
+        mysqli_stmt_fetch($findExistingUserQuery);
+        if($resultEmail == $email){
+            header(("Location: /account/signup.php"));
+            $_SESSION['AccountExists'] = true;
+            $databaseConnection->close();
+            ob_flush();
+            exit();
+        }
+        mysqli_stmt_close($findExistingUserQuery);
+    }else{
+        header(("Location: /account/signup.php"));
+        $_SESSION['UnknownError'] = true;
+        mysqli_stmt_close($findExistingUserQuery);
+        $databaseConnection->close();
+        ob_flush();
+        exit();
+    }
+    
+    
+
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT, $bcryptOptions); 
     //prepared sql statement
     //"INSERT INTO csc131.Users (`Full Name`, `Email`, `Hashed Password`, `StudentID`) VALUES (?, ?, ?, ?)"
-    $findUserQuery = mysqli_prepare($databaseConnection, "INSERT INTO csc131.Users (`Full Name`, `Email`, `Hashed Password`, `StudentID`) VALUES (?, ?, ?, ?)");
-    mysqli_stmt_bind_param($findUserQuery, "ssss", $fullName, $email, $hashedPassword, $studentID);
+    $createUserQuery = mysqli_prepare($databaseConnection, "INSERT INTO csc131.Users (`Full Name`, `Email`, `Hashed Password`, `StudentID`) VALUES (?, ?, ?, ?)");
+    mysqli_stmt_bind_param($createUserQuery, "ssss", $fullName, $email, $hashedPassword, $studentID);
 
-    if (mysqli_stmt_execute($findUserQuery) === TRUE) {
+    if (mysqli_stmt_execute($createUserQuery) === TRUE) {
         //echo "Signup successful!";
         header(("Location: /account/login.php"));
-        mysqli_stmt_close($findUserQuery);
+        mysqli_stmt_close($createUserQuery);
         $databaseConnection->close();
         ob_flush();
         exit();
@@ -103,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         header(("Location: /account/signup.php"));
         $_SESSION['UnknownError'] = true;
-        mysqli_stmt_close($findUserQuery);
+        mysqli_stmt_close($createUserQuery);
         $databaseConnection->close();
         ob_flush();
         exit();
