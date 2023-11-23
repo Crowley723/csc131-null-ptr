@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ob_start();    
     $email = $_POST["email"];
     $password = $_POST["password1"];
+
     
     if (empty($email)) {
         echo "Email is required.";
@@ -50,6 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         //echo "<br>Connected to DB </br>";
     }
+    
+
+
 
     $findUserQuery = mysqli_prepare($databaseConnection, "SELECT * FROM Users WHERE `Email` = ?");
     mysqli_stmt_bind_param($findUserQuery, "s", $email);
@@ -59,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $userData = mysqli_fetch_assoc($userResult);
 
         mysqli_stmt_close($findUserQuery);
-        $databaseConnection->close();
+        
 
         if ($userData){
             $hashedPassword = $userData['Hashed Password'];
@@ -71,11 +75,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['Email'] = $email;
                 $_SESSION['FullName'] = $fullName;
             
-                echo "<br>User " . $_SESSION['FullName'] . " Logged In! </br>";
+                //echo "<br>User " . $_SESSION['FullName'] . " Logged In! </br>";
+                
+                setLoggedInDate($databaseConnection, $email);
+
+                $databaseConnection->close();
                 header("Location: /account/welcome.php");
                 ob_flush();
                 exit(); 
-                // Other user-related information can be stored in session variables as needed
             } else {
                 $_SESSION['WrongCredentials'] = TRUE;
                 header("Location: /account/login.php");
@@ -93,6 +100,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
+
+function setLoggedInDate($databaseConnection, $email){
+    $updateLastLoggedInQuery = mysqli_prepare($databaseConnection, "UPDATE csc131.Users SET `Last Logged In` = CURRENT_TIMESTAMP WHERE Email = ?");
+    mysqli_stmt_bind_param($updateLastLoggedInQuery, "s", $email);
+
+    if(mysqli_stmt_execute($updateLastLoggedInQuery)){
+        mysqli_stmt_close($updateLastLoggedInQuery);
+        return true;
+    }
+    mysqli_stmt_close($updateLastLoggedInQuery);
+    return false;
+}
+
 function validateEmail($email) {
     // Define a regular expression for basic email validation
     $emailRegex = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
