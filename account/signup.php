@@ -20,29 +20,43 @@
                 <?php 
                 if(isset($_SESSION['NeedName']) && $_SESSION['NeedName'] === TRUE){
                     echo "<p style=\"color:red;\">You must include your name.</p>";
+                    $_SESSION['NeedName'] = FALSE;
                 }
                 if(isset($_SESSION['NeedEmail']) && $_SESSION['NeedEmail'] === TRUE){
                     echo "<p style=\"color:red;\">You must include your email.</p>";
+                    $_SESSION['NeedEmail'] = FALSE;
                 }
                 if(isset($_SESSION['NeedPassword']) && $_SESSION['NeedPassword'] === TRUE){
                     echo "<p style=\"color:red;\">You must include your password.</p>";
+                    $_SESSION['NeedPassword'] = FALSE;
                 }
                 if(isset($_SESSION['NeedStudentID']) && $_SESSION['NeedStudentID'] === TRUE){
                     echo "<p style=\"color:red;\">You must include your student ID.</p>";
+                    $_SESSION['NeedStudentID'] = FALSE;
                 }
 
                 if(isset($_SESSION['InvalidName']) && $_SESSION['InvalidName'] === TRUE){
                     echo "<p style=\"color:red;\">Invalid Name</p>";
+                    $_SESSION['InvalidName'] = FALSE;
                 }
                 if(isset($_SESSION['InvalidEmail']) && $_SESSION['InvalidEmail'] === TRUE){
                     echo "<p style=\"color:red;\">Invalid Email</p>";
+                    $_SESSION['InvalidEmail'] = FALSE;
                 }
                 if(isset($_SESSION['InvalidPassword']) && $_SESSION['InvalidPassword'] === TRUE){
                     echo "<p style=\"color:red;\">Invalid Password</p>";
+                    $_SESSION['InvalidPassword'] = FALSE;
                 }
                 if(isset($_SESSION['InvalidStudentID']) && $_SESSION['InvalidStudentID'] === TRUE){
                     echo "<p style=\"color:red;\">Invalid StudentId</p>";
+                    $_SESSION['InvalidStudentID'] = FALSE;
                 }
+
+                if(isset($_SESSION['AccountExists']) && $_SESSION['AccountExists'] === TRUE){
+                    echo "<p style=\"color:red;\">An account with that email already exists. Try logging in.</p>";
+                    $_SESSION['AccountExists'] = FALSE;
+                }
+
                 ?>
 
                 </div>
@@ -58,7 +72,7 @@
                 <input type="text" id="studentID" name="studentID" placeholder="Enter Student ID" inputmode="numeric" pattern="[0-9]+" required/><br><br>
 
                 <label for="password1" class="entry-label">Password: </label><br>
-                <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" onkeyup="checkPassword()" required><br><br>
+                <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}" placeholder="Enter Password" onkeyup="checkPassword()" required><br><br>
 
                 <div id="pw-validation-header" class="password-validation">
                     <p id="pw-validation-header2">Your password must have the following:</p>
@@ -72,8 +86,8 @@
 
                 <label for="password2" class="entry-label">Retype Password: </label><br>
                 <input type="password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Retype Password" onkeyup="matchPasswords()" required><br><br>
-                <div id="retype-password" class="password-validation">
-                    <br style="color:red">Your passwords do not match.</br>
+                <div id="retype-password" class="password-validation"style="color:red;>
+                    <br">Your passwords do not match.</br>
                 </div>
 
                 <button id="submit">Submit</button>
