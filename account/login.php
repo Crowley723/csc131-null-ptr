@@ -33,18 +33,23 @@ ob_flush();
                 <?php
                 if(isset($_SESSION['NeedEmail']) && $_SESSION['NeedEmail'] === TRUE){
                     echo "<p style=\"color:red;\">You must include your email.</p>";
+                    $_SESSION['NeedEmail'] = FALSE;
                 }
                 if(isset($_SESSION['NeedPassword']) && $_SESSION['NeedPassword'] === TRUE){
                     echo "<p style=\"color:red;\">You must include your password.</p>";
+                    $_SESSION['NeedPassword'] = FALSE;
                 }
                 if(isset($_SESSION['InvalidEmail']) && $_SESSION['InvalidEmail'] === TRUE){
                     echo "<p style=\"color:red;\">Invalid email or password. Please try again.</p>";
+                    $_SESSION['InvalidEmail'] = FALSE;
                 }
                 if(isset($_SESSION['InvalidPassword']) && $_SESSION['InvalidPassword'] === TRUE){
                     echo "<p style=\"color:red;\">Your password is of the incorrect format.</p>";
+                    $_SESSION['InvalidPassword'] = FALSE;
                 }
                 if(isset($_SESSION['WrongCredentials']) && $_SESSION['WrongCredentials'] === TRUE){
                     echo "<p style=\"color:red;\">Invalid email or password. Please try again.</p>";
+                    $_SESSION['WrongCredentials'] = FALSE;
                 }
 
                 ?>
@@ -56,11 +61,11 @@ ob_flush();
 
                 <label for="password1" class="entry-label">Password: </label><br>
                 <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" required><br><br>
-
-                <label class="rememberme">
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-                
+                <span class="rememberme">
+                    <label>
+                    <input type="checkbox" name="remember" id="remember">Remember me
+                    </label>
+                </span>
 
                 <button id="submit">Submit</button>
             </form>
