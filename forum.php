@@ -52,7 +52,7 @@ function likePost(){
 }
 
 function updatePage(data){
-    if(data && data.length > 0){  // Check if data is not null and has items
+    if(data && data.length > 0){
         for(var i = data.length - 1; i >= 0; i--){
             var post = data[i];
             if(post.hasOwnProperty('AUTHOR') && 
@@ -71,37 +71,65 @@ function updatePage(data){
                 postContainer.appendChild(userProfile);
 
                 const profileImage = document.createElement("img");
-                profileImage.src = post['IMAGE PATH']; // Make sure 'IMAGE PATH' property exists in your data
+                profileImage.src = post['IMAGE PATH']; 
                 userProfile.appendChild(profileImage);
 
+                const profileTextContainer = document.createElement("div");
+                userProfile.appendChild(profileTextContainer);
+
                 const profileName = document.createElement("p");
-                profileName.textContent = post['AUTHOR']; // Assuming 'AUTHOR' is a property in your data
-                userProfile.appendChild(profileName);
+                profileName.textContent = post['AUTHOR'];
+                profileTextContainer.appendChild(profileName);
+
+
+                const timestampOptions = {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true,
+                };
+                const dateObject = new Date(post['TIMESTAMP']);
 
                 const timeStamp = document.createElement("span");
-                timeStamp.textContent = post['TIMESTAMP']; // Assuming 'TIMESTAMP' is a property in your data
-                userProfile.appendChild(timeStamp);
+                timeStamp.textContent = dateObject.toLocaleString('en-US', timestampOptions); 
+                profileTextContainer.appendChild(timeStamp);
 
                 const postText = document.createElement("p");
                 postText.className = 'post-text';
-                postText.textContent = post['POST BODY']; // Assuming 'POST BODY' is a property in your data
+                postText.textContent = post['POST BODY']; 
                 postContainer.appendChild(postText);
+
+                const postRow = document.createElement("div");
+                postRow.className = 'post-row';
+                postContainer.appendChild(postRow);
+
+
 
                 const activityIcons = document.createElement("div");
                 activityIcons.className = 'activity-icons';
-                postContainer.appendChild(activityIcons);
-                /*
+                postRow.appendChild(activityIcons);
+            
+                const likeButton = document.createElement("div");
+                likeButton.className = 'like-button';
+                activityIcons.appendChild(likeButton);
+                
                 const thumbsUpIcon = document.createElement("button");
                 thumbsUpIcon.id = 'likeBtn2';
                 thumbsUpIcon.className = 'like-btn';
-                thumbsUpIcon.textContent = '👍';
-                activityIcons.appendChild(thumbsUpIcon);
+                const postID = post['ID']
+                thumbsUpIcon.onclick = function(){
+                    toggleLike(postID);
+                }; 
+                thumbsUpIcon.innerText = '👍';
+                likeButton.appendChild(thumbsUpIcon);
 
                 const thumbsUpCounter = document.createElement("span");
                 thumbsUpCounter.className = 'like-count';
-                thumbsUpCounter.textContent = '0';
-                activityIcons.appendChild(thumbsUpCounter);
-                */
+                thumbsUpCounter.innerText = post['LIKES'];
+                likeButton.appendChild(thumbsUpCounter);
+                
             }
         }
     }
@@ -173,7 +201,7 @@ function updatePage(data){
             <div class="modal-content">
                 <h2>Share Your Thoughts</h2>
                 <form action="/addPost.php" method="POST">
-                    <textarea id="postText" placeholder="Type your post here" required></textarea>
+                    <textarea id="postText" name="postText" placeholder="Type your post here" required></textarea>
                     <input type="submit">
                     <button type="button" onclick="closeModal()" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 </form>
