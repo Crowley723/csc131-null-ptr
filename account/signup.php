@@ -1,22 +1,68 @@
+<?php include("../header.php") ?>
 <!DOCTYPE html>
 <html>
 <style>
     h1 {
         padding: 16px 16px 16px 16px;   
     }
+    
 </style>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Sign Up</title>
-        <?php include("../header.php") ?>
+        
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body>
         <div class="signup-box">
             <h2>Sign up for an account!</h2>
-            <form action="/handleSignup.php" method="post" class="form-container">
+                <div class="error-message">
+                <?php 
+                if(isset($_SESSION['NeedName']) && $_SESSION['NeedName'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your name.</p>";
+                    $_SESSION['NeedName'] = FALSE;
+                }
+                if(isset($_SESSION['NeedEmail']) && $_SESSION['NeedEmail'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your email.</p>";
+                    $_SESSION['NeedEmail'] = FALSE;
+                }
+                if(isset($_SESSION['NeedPassword']) && $_SESSION['NeedPassword'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your password.</p>";
+                    $_SESSION['NeedPassword'] = FALSE;
+                }
+                if(isset($_SESSION['NeedStudentID']) && $_SESSION['NeedStudentID'] === TRUE){
+                    echo "<p style=\"color:red;\">You must include your student ID.</p>";
+                    $_SESSION['NeedStudentID'] = FALSE;
+                }
 
-                <div style="display: inline-block"><label for="firstName" class="entry-label" style="float: left">Full Name: </label> <div class="existingAccount" style="float: right"><span>Already have an account? </span><a href="/account/login.php">Log In</a></div></div><br>
+                if(isset($_SESSION['InvalidName']) && $_SESSION['InvalidName'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid Name</p>";
+                    $_SESSION['InvalidName'] = FALSE;
+                }
+                if(isset($_SESSION['InvalidEmail']) && $_SESSION['InvalidEmail'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid Email</p>";
+                    $_SESSION['InvalidEmail'] = FALSE;
+                }
+                if(isset($_SESSION['InvalidPassword']) && $_SESSION['InvalidPassword'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid Password</p>";
+                    $_SESSION['InvalidPassword'] = FALSE;
+                }
+                if(isset($_SESSION['InvalidStudentID']) && $_SESSION['InvalidStudentID'] === TRUE){
+                    echo "<p style=\"color:red;\">Invalid StudentId</p>";
+                    $_SESSION['InvalidStudentID'] = FALSE;
+                }
+
+                if(isset($_SESSION['AccountExists']) && $_SESSION['AccountExists'] === TRUE){
+                    echo "<p style=\"color:red;\">An account with that email already exists. Try logging in.</p>";
+                    $_SESSION['AccountExists'] = FALSE;
+                }
+
+                ?>
+
+                </div>
+            <form action="/account/handleSignup.php" method="post" class="form-container">
+
+                <label for="firstName" class="entry-label" style="float: left">Full Name: </label> 
                 <input type="text" id="firstName" name="firstName" placeholder="Enter Full Name" required><br><br>
 
                 <label for="email" class="entry-label">Email: </label><br>
@@ -40,17 +86,19 @@
 
                 <label for="password2" class="entry-label">Retype Password: </label><br>
                 <input type="password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Retype Password" onkeyup="matchPasswords()" required><br><br>
-                <div id="retype-password" class="password-validation">
-                    <br>Your passwords do not match.</br>
+                <div id="retype-password" class="password-validation"style="color:red;>
+                    <br">Your passwords do not match.</br>
                 </div>
 
                 <button id="submit">Submit</button>
             </form>
-            <!--div class="separator">
+            <div class="separator">
                 <div class="line"></div>
                 <div class="text">OR</div>
                 <div class="line"></div>
-            </div//-->
+            </div>
+            <div class="existingAccount" style="float: center"><span>Already have an account? </span><a class="signup-button" href="/account/login.php">Log In</a></div></div><br>
+            
         </div>
     </body>
     <script>

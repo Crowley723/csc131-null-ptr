@@ -1,3 +1,4 @@
+<?php include("./header.php") ?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -8,7 +9,7 @@
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Forum</title>
-        <?php include("./header.php") ?>
+        
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
         <script src="https://kit.fontawesome.com/31806d8454.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
