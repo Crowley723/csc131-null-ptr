@@ -81,7 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $bcryptOptions = [ 
-        'cost' => 12, 
+        'cost' => 13, 
     ]; 
 
     $findExistingUserQuery = mysqli_prepare($databaseConnection, "Select `Email` FROM csc131.Users where `Email` = ?");
@@ -169,7 +169,7 @@ function passwordMatchesPattern($password) {
 }
 function validateStudentID($studentID) {
     // Define a regular expression for basic email validation
-    $studentIDRegex = "/^[0-9]{8}$/";
+    $studentIDRegex = "/^[0-9]{9}$/";
     $studentID = htmlspecialchars($studentID);
     // Use the preg_match function to test the email against the regular expression
     if (preg_match($studentIDRegex, $studentID)) {
