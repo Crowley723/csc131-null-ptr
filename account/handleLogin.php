@@ -69,11 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $hashedPassword = $userData['Hashed Password'];
             $email = $userData['Email'];
             $fullName = $userData['Full Name'];
+            $studentID = $userData['StudentID'];
             if (password_verify($password, $hashedPassword)) {
                 // Store user information in session variables
                 
                 $_SESSION['Email'] = $email;
                 $_SESSION['FullName'] = $fullName;
+                $_SESSION['StudentID'] = $studentID;
             
                 //echo "<br>User " . $_SESSION['FullName'] . " Logged In! </br>";
                 
@@ -148,7 +150,7 @@ function passwordMatchesPattern($password) {
 }
 function validateStudentID($studentID) {
     // Define a regular expression for basic email validation
-    $studentIDRegex = "/^[0-9]{8}$/";
+    $studentIDRegex = "/^[0-9]{9}$/";
 
     // Use the preg_match function to test the email against the regular expression
     if (preg_match($studentIDRegex, $studentID)) {
