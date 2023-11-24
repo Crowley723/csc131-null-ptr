@@ -401,7 +401,7 @@ $(document).ready(function() {
               <img id=\"identicon\" style=\"max-width: 35px; max-height: 35px; border: 1px solid black;\"class=\"dropbtn\">
             </div>
             <div class=\"dropdown-content\">
-              <a href=\"#/account/dashboard.php\">Dashboard</a>
+              <a href=\"/account/dashboard.php\">Dashboard</a>
               <a href=\"/account/logout.php\">Logout</a>
             </div>
           </div>";
