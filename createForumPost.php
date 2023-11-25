@@ -38,29 +38,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         checkPostExists($databaseConnection, $postID);
         
 
-        $createForumPostsQuery = mysqli_prepare($databaseConnection, "INSERT INTO csc131.forum-posts (`ID`, `AUTHOR`, `POST BODY`) VALUES (?, ?, ?)");
-        mysqli_stmt_bind_param($createForumPostsQuery, "sss", $postID, $userName, $postBody);
+        $createForumPostsQuery = mysqli_prepare($databaseConnection, "INSERT INTO csc131.`forum-posts` (`ID`, `AUTHOR`, `POST BODY`) VALUES (?, ?, ?)");
+        mysqli_stmt_bind_param($createForumPostsQuery, "sss", $postID, $userEmail, $postBody);
         if(mysqli_stmt_execute($createForumPostsQuery)){
-            header("Location: /forum.php");
+            
             $databaseConnection->close();
+            mysqli_stmt_close($createForumPostsQuery);
+            
             http_response_code(200);
+            header("Location: /forum.php");
             ob_flush();
             exit();
         } else{
-            header("Location: /forum.php");
-            $_SESSION['UnknownError'] = TRUE;
-            http_response_code(500);
             $databaseConnection->close();
+            mysqli_stmt_close($createForumPostsQuery);
+            $_SESSION['UnknownError'] = TRUE;
+            
+            header("Location: /forum.php");
+            http_response_code(500);
             ob_flush();
             exit();
         }
  
     }catch(Exception $e){
+        header("Location: /forum.php");
         echo "Internal Server Error: " . $e->getMessage();
+        http_response_code(500);
         ob_flush();
         exit();
     }
 }else{
+    header("Location: /forum.php");
     http_response_code(501);
     ob_flush();
     exit();
@@ -68,28 +76,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 function checkPostExists($databaseConnection, $postID){
 
-    $findExistingForumPostQuery = mysqli_prepare($databaseConnection, "Select `ID` FROM csc131.forum-posts where `ID` = ?");
-    mysqli_stmt_bind_param($findExistingForumPostQuery, "s", $postID);
+    
+    
+    if($findExistingForumPostQuery = mysqli_prepare($databaseConnection, "Select `ID` FROM csc131.`forum-posts` where `ID` = ?")){
+        mysqli_stmt_bind_param($findExistingForumPostQuery, "s", $postID);
 
-    if(mysqli_stmt_execute($findExistingForumPostQuery)){
-        mysqli_stmt_bind_result($findExistingForumPostQuery, $resultID);
-        mysqli_stmt_fetch($findExistingForumPostQuery);
-        if($resultID == $postID){
-            header(("Location: /account/forum.php"));
-            $_SESSION['DuplicatePost'] = TRUE;
+        if(mysqli_stmt_execute($findExistingForumPostQuery)){
+            mysqli_stmt_bind_result($findExistingForumPostQuery, $resultID);
+            mysqli_stmt_fetch($findExistingForumPostQuery);
+            if($resultID == $postID){
+                header(("Location: /forum.php"));
+                $_SESSION['DuplicatePost'] = TRUE;
+                $databaseConnection->close();
+                mysqli_stmt_close($findExistingForumPostQuery);
+                ob_flush();
+                exit();
+            }
+            mysqli_stmt_close($findExistingForumPostQuery);
+        }else{
+            header(("Location: /forum.php"));
+            $_SESSION['UnknownError'] = TRUE;
+            mysqli_stmt_close($findExistingForumPostQuery);
+            echo "Error Executing findExistingForumPostQuery";
             $databaseConnection->close();
             ob_flush();
             exit();
         }
-        mysqli_stmt_close($findExistingForumPostQuery);
     }else{
-        header(("Location: /account/forum.php"));
-        $_SESSION['UnknownError'] = TRUE;
-        mysqli_stmt_close($findExistingForumPostQuery);
-        $databaseConnection->close();
-        ob_flush();
-        exit();
+        echo "Error Preparing findExistingForumPostQuery";
     }
+    
     return false;
 }
 
