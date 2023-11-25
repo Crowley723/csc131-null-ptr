@@ -398,7 +398,7 @@ $(document).ready(function() {
   if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
     echo "<div class=\"account-dropdown\">
             <div id=\"identicon-container\">
-              <img id=\"identicon\" style=\"max-width: 35px; max-height: 35px; border: 1px solid black;\"class=\"dropbtn\">
+              <img id=\"identicon\" style=\"max-width: 35px; max-height: 35px; border: 1px solid black; border-radius: 50%;\"class=\"dropbtn\">
             </div>
             <div class=\"dropdown-content\">
               <a href=\"/account/dashboard.php\">Dashboard</a>

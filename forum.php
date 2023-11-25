@@ -11,8 +11,61 @@
         <title>Forum</title>
         
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+        <script src="https://kit.fontawesome.com/31806d8454.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="fourmStyle.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="forumScript.js"></script>
     </head>
-    <body>
-        <h1>COMMUNITY FORUM</h1>
+
+    
+
+<body>
+    <div id="overlay" class="login-popup-overlay" onclick="closePopup()">
+        <div id="loginPopup" class="login-popup">
+            <div class="login-popup-content">
+                <span class="login-popup-close" onclick="closePopup()">&times;</span>
+
+                <p><a href="/account/login.php">Log In</a> to like or create posts.</p>
+            <!-- Add a login button or link here -->
+            </div>
+        </div>
+    </div>
+    
+
+    <!--<h1>Community Fourm</h1>-->
+    <nav>
+        <div class="nav-left">
+            <h1>Community Fourm</h1>
+        </div>
+    </nav>
+
+    <div class="container">
+    <!-------- left-sidebar -------- -->    
+    <div class="left-sidebar">
+
+    </div>
+    <!-------- main-content -------- --> 
+    <div class="main-content" id="main-content">
+
+    </div>
+    <!-------- right-sidebar -------- --> 
+    <div class="right-sidebar">
+        <!-- Post Button -->
+        <button class="post-button" onclick="checkLoginStatusPost()">Post</button>
+
+        <!-- Modal -->
+        <div id="postModal" class="modal">
+            <div class="modal-content">
+                <h2>Share Your Thoughts</h2>
+                <form action="/createForumPost.php" method="POST">
+                    <textarea id="postText" name="postText" placeholder="Type your post here" required></textarea>
+                    <input type="submit">
+                    <button type="button" onclick="closeModal()" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
