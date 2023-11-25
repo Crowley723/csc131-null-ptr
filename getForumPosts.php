@@ -22,10 +22,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
 
         if(!isset($_SESSION['FullName']) || !isset($_SESSION['Email'])){
             $getForumPostsQuery = mysqli_prepare($databaseConnection, 
-            "Select csc131.`forum-posts`.ID, csc131.`forum-posts`.`AUTHOR`, Users.`Full Name`, csc131.`forum-posts`.`POST BODY`, csc131.`forum-posts`.LIKES, csc131.`forum-posts`.`TIMESTAMP`  
+            "SELECT csc131.`forum-posts`.ID, csc131.`forum-posts`.`AUTHOR`, csc131.`Users`.`Full Name`, csc131.`forum-posts`.`POST BODY`, csc131.`forum-posts`.LIKES, csc131.`forum-posts`.`TIMESTAMP`
             FROM csc131.`forum-posts`
-            JOIN csc131.`Users` users ON csc131.`forum-posts`.`AUTHOR` = users.`Email`
-            ORDER BY TIMESTAMP DESC;
+            JOIN csc131.`Users` ON csc131.`forum-posts`.`AUTHOR` = csc131.`Users`.`Email`
+            ORDER BY csc131.`forum-posts`.`TIMESTAMP` DESC;
             ");//get all forum posts, with Name of author instead of email
         }else if($currentUserEmail = $_SESSION['Email']){
             $getForumPostsQuery = mysqli_prepare($databaseConnection,"
