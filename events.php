@@ -200,6 +200,76 @@ input[type=checkbox] {
         
 
 </style>
+<script>
+        // Fetch JSON data from PHP script
+        fetch('fetchEvents.php')
+            .then(response => response.json())
+            .then(data => {
+                // Get the container to append event cards
+                const eventContainer = document.getElementById('event-container');
+
+                // Loop through each event and create HTML elements
+                data.forEach(event => {
+                    // Create elements
+                    const eventCard = document.createElement('div');
+                    eventCard.className = 'event-card';
+
+                    const eventLink = document.createElement('a');
+                    eventLink.href = event.Link;
+
+                    const eventImage = document.createElement('img');
+                    eventImage.src = event['Image Path']; // Assuming this key is correct in your JSON data
+                    eventImage.alt = 'Placeholder';
+                    eventImage.style.width = '50%';
+
+                    const textContainer = document.createElement('div');
+                    textContainer.className = 'text-container';
+
+                    const eventName = document.createElement('h4');
+                    eventName.innerHTML = `<b>${event.Title}</b>`;
+
+                    const moreInfoButton = document.createElement('a');
+                    moreInfoButton.className = 'button';
+                    moreInfoButton.href = '#modal' + event['ID']
+                    moreInfoButton.innerHTML = 'More info';
+
+                    // Append elements
+                    eventLink.appendChild(eventImage);
+                    textContainer.appendChild(eventName);
+                    textContainer.appendChild(moreInfoButton);
+                    eventCard.appendChild(eventLink);
+                    eventCard.appendChild(textContainer);
+
+                    // Append event card to container
+                    eventContainer.appendChild(eventCard);
+                    // Create elements for the modal
+                    const modal = document.createElement('div');
+                    modal.className = 'popup';
+                    modal.id = modal${eventId};
+
+                    const modalOverlay = document.createElement('a');
+                    modalOverlay.className = 'popup__overlay';
+                    modalOverlay.href = '#';
+
+                    const modalWrapper = document.createElement('div');
+                    modalWrapper.className = 'popup__wrapper';
+
+                    // ... (Add other modal elements as needed)
+
+                    // Append modal elements
+                    modal.appendChild(modalOverlay);
+                    modal.appendChild(modalWrapper);
+
+                    // Append modal to the body or another container
+                    document.body.appendChild(modal);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+
+
+    </script>
+
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Events</title>
@@ -214,7 +284,7 @@ input[type=checkbox] {
     </div>
     </body>
 
-<div class="event-container">
+<div id="event-container"class="event-container">
 <div class="event-card">
     <a href="https://www.csus.edu/">
         <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">

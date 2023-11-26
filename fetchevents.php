@@ -6,52 +6,46 @@ $DBusername = getenv("CSC131USERDBUSER");
 $DBpassword = getenv("CSC131USERDBPASS");
 session_start();
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER["REQUEST_METHOD"] == "GET") {
     ob_start();
     $databaseConnection = mysqli_connect($DBhostname, $DBusername, $DBpassword, $usersDB);
 
     if (!$databaseConnection) {
-        echo "Error: Unable to connect to MySQL." . PHP_EOL;
-        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+        //echo "Error: Unable to connect to MySQL." . PHP_EOL;
+        //echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+        //echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
         ob_flush();
         exit;
     }else{
         //echo "<br>Connected to DB </br>";
     }
 
-    $getEventsQuery = mysqli_prepare($databaseConnection, "SELECT * FROM Events");
+    $getEventsQuery = mysqli_prepare($databaseConnection, "Select Events.ID, Events.Title, Events.Cost, Events.Date, Events.Location, Events.Description, Events.Link, Events.`Image path` from Events; ");
 
     if ($getEventsQuery->execute() === TRUE) {
-        $eventsResults = mysqli_stmt_get_result($getEventsQuery);
+        mysqli_stmt_bind_result($getEventsQuery,$eventID, $eventTitle, $eventCost, $eventDate, $eventLocation, $eventDescription, $eventLink, $eventImagePath);
         $outputData = array();
-
-        mysqli_stmt_close($getEventsQuery);
-        $databaseConnection->close();
         
-        while($eventData = mysqli_fetch_assoc($eventsResults)) {
-            $EventTitle = $eventData["Title"];
-            $eventCost = $eventData["Cost"];
-            $eventDate = $eventData["Date"];
-            $eventLocation = $eventData["Location"];
-            $eventDescription = $eventData["Description"];
-            $eventLink = $eventData["Link"];
-            $eventImagePath = $eventData["Image path"];
-            $outputData = array(
+        while(mysqli_stmt_fetch($getEventsQuery)) {
+            $outputData[] = array(
+                "ID"=> $eventID,
                 "Title"=> $eventTitle,
                 "Cost"=> $eventCost,
                 "Date"=> $eventDate,
                 "Location"=> $eventLocation,
                 "Description"=> $eventDescription,
-                "Link"=> $$eventLink,
+                "Link"=> $eventLink,
                 "Image Path"=> $eventImagePath,
             );
         }
+        mysqli_stmt_close($getEventsQuery);
+        $databaseConnection->close();
+
         header("Content-Type: application/json");
-        echo json_encode($data, JSON_THROW_ON_ERROR);
+        echo json_encode($outputData, JSON_THROW_ON_ERROR);
         
         }else{
-            echo "Error: " . $getEventsQuery->error;
+            //echo "Error: " . $getEventsQuery->error;
             $_SESSION['NoEventsFound'] = TRUE;
             header("Location: /events.php");
             ob_flush();
