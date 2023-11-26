@@ -215,7 +215,7 @@ input[type=checkbox] {
 
                         eventCard.innerHTML = `
                             <a href="${event.Link}">
-                                <img src="${event['Image path']}" alt="Event Image" style="width:50%">
+                                <img src="${event['Image Path']}" alt="Event Image" style="width:50%">
                             </a>
                             <div class="text-container">
                                 <h4><b>${event.Title}</b></h4>
@@ -255,134 +255,7 @@ input[type=checkbox] {
     </body>
 
 <div id="event-container"class="event-container">
-    <div class="event-card">
-        <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
-        </a>
-        <div class="text-container">
-        <h4><b>Event Name</b></h4>
-        <a class="button" href="#modal1">More info</a>
 
-            <div class="popup" id="modal1">
-                <a class="popup__overlay" href="#"></a>
-                <div class="popup__wrapper">
-                    <a class="popup__close" href="#">Close</a>
-                    <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
-                    Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
-                    id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
-                    quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
-                    quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
-                    vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
-                    Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
-                    eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
-                    cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
-                    faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
-                        eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
-                        Aliquam eleifend mi in nulla posuere.</p>
-                        <p>COST: $$$$</p>
-                        <p>LOCATION: ----------</p>
-                        <a href="https://www.example.com">Visit event</a>
-                </div>
-            </div>
-        </div>
-    </div>
-  <div class="event-card">
-    <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
-    </a>
-    <div class="text-container">
-        <h4><b>Event Name</b></h4>
-            <a class="button" href="#modal2">More info</a>
-    <div class="popup" id="modal2">
-        <a class="popup__overlay" href="#"></a>
-        <div class="popup__wrapper">
-            <a class="popup__close" href="#">Close</a>
-            <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
-         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
-         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
-          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
-          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
-          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
-          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
-          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
-          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
-           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
-            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
-            Aliquam eleifend mi in nulla posuere.</p>
-            <p>COST: $$$$</p>
-            <p>LOCATION: ----------</p>
-            <a href="https://www.example.com">Visit event</a>
-        </div>
-    </div>
-    </div>
-  </div>
-
-  <div class="event-card">
-    <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
-    </a>
-    <div class="text-container">
-        <h4><b>Event Name</b></h4>
-        <a class="button" href="#modal3">More info</a>
-    <div class="popup" id="modal3">
-        <a class="popup__overlay" href="#"></a>
-        <div class="popup__wrapper">
-            <a class="popup__close" href="#">Close</a>
-            <p> DESCRIPTION:    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
-         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
-         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
-          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
-          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
-          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
-          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
-          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
-          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
-           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
-            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
-            Aliquam eleifend mi in nulla posuere.</p>
-            <p>COST: $$$$</p>
-            <p>LOCATION: ----------</p>
-            <a href="https://www.example.com">Visit event</a>
-        </div>
-    </div>
-    </div>
-  </div>
-
-
-  <div class="event-card">
-    <a href="https://www.csus.edu/">
-            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
-    </a>
-    <div class="text-container">
-        <h4><b>Event Name</b></h4>
-        <a class="button" href="#modal4">More info</a>
-    <div class="popup" id="modal4">
-        <a class="popup__overlay" href="#"></a>
-        <div class="popup__wrapper">
-            <a class="popup__close" href="#">Close</a>
-            <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
-         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
-         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
-          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
-          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
-          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
-          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
-          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
-          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
-           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
-            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
-            Aliquam eleifend mi in nulla posuere.</p>
-            <p>COST: $$$$</p>
-            <p>LOCATION: ----------</p>
-            <a href="https://www.example.com">Visit event</a>
-        </div>
-    </div>
-    </div>
-  </div>
 
 </div> 
 
