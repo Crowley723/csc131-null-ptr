@@ -31,7 +31,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-image: url('SacState_Fall.jpg'); /* Set the background image using the relative path */
+            background-image: url('assets/SacState_Fall.jpg'); /* Set the background image using the relative path */
             background-size: cover; /* Cover the entire area of the box */
             background-position: center; /* Center the image in the box */
             background-repeat: no-repeat; /* Do not repeat the image */
