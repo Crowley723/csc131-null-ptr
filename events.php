@@ -201,73 +201,43 @@ input[type=checkbox] {
 
 </style>
 <script>
-        // Fetch JSON data from PHP script
-        fetch('fetchEvents.php')
-            .then(response => response.json())
-            .then(data => {
-                // Get the container to append event cards
-                const eventContainer = document.getElementById('event-container');
+        document.addEventListener("DOMContentLoaded", function () {
+            // Fetch data from the endpoint using Fetch API
+            fetch('fetchevents.php')
+                .then(response => response.json())
+                .then(data => {
+                    // Process the data and generate event cards
+                    const eventsContainer = document.getElementById('event-container');
 
-                // Loop through each event and create HTML elements
-                data.forEach(event => {
-                    // Create elements
-                    const eventCard = document.createElement('div');
-                    eventCard.className = 'event-card';
+                    data.forEach(event => {
+                        const eventCard = document.createElement('div');
+                        eventCard.className = 'event-card';
 
-                    const eventLink = document.createElement('a');
-                    eventLink.href = event.Link;
+                        eventCard.innerHTML = `
+                            <a href="${event.Link}">
+                                <img src="${event['Image path']}" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>${event.Title}</b></h4>
+                                <a class="button" href="#modal${event.ID}">More info</a>
+                                <div class="popup" id="modal${event.ID}">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: ${event.Description}</p>
+                                        <p>COST: ${event.Cost}</p>
+                                        <p>LOCATION: ${event.Location}</p>
+                                        <a href="${event.Link}">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
 
-                    const eventImage = document.createElement('img');
-                    eventImage.src = event['Image Path']; // Assuming this key is correct in your JSON data
-                    eventImage.alt = 'Placeholder';
-                    eventImage.style.width = '50%';
-
-                    const textContainer = document.createElement('div');
-                    textContainer.className = 'text-container';
-
-                    const eventName = document.createElement('h4');
-                    eventName.innerHTML = `<b>${event.Title}</b>`;
-
-                    const moreInfoButton = document.createElement('a');
-                    moreInfoButton.className = 'button';
-                    moreInfoButton.href = '#modal' + event['ID']
-                    moreInfoButton.innerHTML = 'More info';
-
-                    // Append elements
-                    eventLink.appendChild(eventImage);
-                    textContainer.appendChild(eventName);
-                    textContainer.appendChild(moreInfoButton);
-                    eventCard.appendChild(eventLink);
-                    eventCard.appendChild(textContainer);
-
-                    // Append event card to container
-                    eventContainer.appendChild(eventCard);
-                    // Create elements for the modal
-                    const modal = document.createElement('div');
-                    modal.className = 'popup';
-                    modal.id = modal${eventId};
-
-                    const modalOverlay = document.createElement('a');
-                    modalOverlay.className = 'popup__overlay';
-                    modalOverlay.href = '#';
-
-                    const modalWrapper = document.createElement('div');
-                    modalWrapper.className = 'popup__wrapper';
-
-                    // ... (Add other modal elements as needed)
-
-                    // Append modal elements
-                    modal.appendChild(modalOverlay);
-                    modal.appendChild(modalWrapper);
-
-                    // Append modal to the body or another container
-                    document.body.appendChild(modal);
-                });
-            })
-            .catch(error => console.error('Error fetching data:', error));
-
-
-
+                        eventsContainer.appendChild(eventCard);
+                    });
+                })
+                .catch(error => console.error('Error fetching data:', error));
+            });
     </script>
 
     <head>
@@ -285,38 +255,38 @@ input[type=checkbox] {
     </body>
 
 <div id="event-container"class="event-container">
-<div class="event-card">
-    <a href="https://www.csus.edu/">
-        <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
-</a>
-    <div class="text-container">
-      <h4><b>Event Name</b></h4>
-      <a class="button" href="#modal1">More info</a>
+    <div class="event-card">
+        <a href="https://www.csus.edu/">
+            <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
+        </a>
+        <div class="text-container">
+        <h4><b>Event Name</b></h4>
+        <a class="button" href="#modal1">More info</a>
 
-<div class="popup" id="modal1">
-    <a class="popup__overlay" href="#"></a>
-    <div class="popup__wrapper">
-        <a class="popup__close" href="#">Close</a>
-        <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-         ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
-         Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
-         id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
-          quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
-          quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
-          vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
-          Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
-          eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
-          cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
-           faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
-            eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
-            Aliquam eleifend mi in nulla posuere.</p>
-            <p>COST: $$$$</p>
-            <p>LOCATION: ----------</p>
-            <a href="https://www.example.com">Visit event</a>
+            <div class="popup" id="modal1">
+                <a class="popup__overlay" href="#"></a>
+                <div class="popup__wrapper">
+                    <a class="popup__close" href="#">Close</a>
+                    <p>DESCRIPTION:     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Penatibus et magnis dis parturient montes nascetur. 
+                    Neque ornare aenean euismod elementum nisi quis eleifend quam. Id interdum velit laoreet 
+                    id donec. Lacus suspendisse faucibus interdum posuere lorem ipsum. Neque egestas congue
+                    quisque egestas diam in. Purus sit amet volutpat consequat mauris nunc congue. Ut diam 
+                    quam nulla porttitor massa. Nisi porta lorem mollis aliquam ut. Ridiculus mus mauris 
+                    vitae ultricies leo integer. In ante metus dictum at tempor commodo ullamcorper a lacus. 
+                    Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Felis 
+                    eget velit aliquet sagittis id consectetur. Est pellentesque elit ullamcorper dignissim 
+                    cras tincidunt lobortis. Tortor at auctor urna nunc id cursus. Fringilla phasellus
+                    faucibus scelerisque eleifend donec pretium vulputate sapien nec. Faucibus scelerisque
+                        eleifend donec pretium vulputate sapien. Diam in arcu cursus euismod quis viverra nibh. 
+                        Aliquam eleifend mi in nulla posuere.</p>
+                        <p>COST: $$$$</p>
+                        <p>LOCATION: ----------</p>
+                        <a href="https://www.example.com">Visit event</a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-    </div>
-  </div>
   <div class="event-card">
     <a href="https://www.csus.edu/">
             <img src="/assets/sac-state-logo-no-text.png" alt="Placeholder" style="width:50%">
