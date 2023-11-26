@@ -13,5 +13,6 @@
     </head>
     <body>
         <h1>EVENTS PAGE</h1>
+        <p> TESTING </p>
 </body>
 </html>
