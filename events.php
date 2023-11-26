@@ -225,7 +225,7 @@ input[type=checkbox] {
                                     <div class="popup__wrapper">
                                         <a class="popup__close" href="#">Close</a>
                                         <p>DESCRIPTION: ${event.Description}</p>
-                                        <p>COST: ${event.Cost}</p>
+                                        <p>COST:$${event.Cost}</p>
                                         <p>LOCATION: ${event.Location}</p>
                                         <a href="${event.Link}">Visit event</a>
                                     </div>
