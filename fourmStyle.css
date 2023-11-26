@@ -304,6 +304,7 @@ nav .nav-left h1{
 .post-container{
     width: 94%;
     background: #efefef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
     padding: 20px;
     color: #626262;
