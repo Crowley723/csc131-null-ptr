@@ -198,6 +198,10 @@ input[type=checkbox] {
             background-color: #dad490;  /* change as needed */
             color: var(--ssgr);
         }
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
         
 
 </style>
