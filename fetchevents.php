@@ -37,9 +37,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
         }
         mysqli_stmt_close($getEventsQuery);
         $databaseConnection->close();
+        $cleanedData = mb_convert_encoding($outputData, 'UTF-8', 'auto');
 
         header("Content-Type: application/json");
-        echo json_encode($outputData, JSON_THROW_ON_ERROR);
+        echo json_encode($cleanedData, JSON_THROW_ON_ERROR);
         
         }else{
             //echo "Error: " . $getEventsQuery->error;
