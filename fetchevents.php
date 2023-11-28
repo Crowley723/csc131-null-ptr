@@ -10,11 +10,11 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
     ob_start();
     $databaseConnection = mysqli_connect($DBhostname, $DBusername, $DBpassword, $usersDB);
 
-    try{
     if ($databaseConnection->connect_error) {
         http_response_code(500);
         ob_flush();
-        throw new Exception("Database Connection Error, Error No.: ".$databaseConnection->connect_errno." | ".$databaseConnection->connect_error);
+        exit();
+       // throw new Exception("Database Connection Error, Error No.: ".$databaseConnection->connect_errno." | ".$databaseConnection->connect_error);
     }
 
     $getEventsQuery = mysqli_prepare($databaseConnection, "Select Events.ID, Events.Title, Events.Cost, Events.Date, Events.Location, Events.Description, Events.Link, Events.`Image path` from Events; ");
@@ -48,11 +48,10 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
             ob_flush();
             exit();
         }
-    }catch(Exception $e){
-        throw New Exception($e);
-    }
+    
 
 
-}else http_response_code(503);
+}else    http_response_code(503);
+    ob_flush();
     exit();
 ?>
