@@ -74,7 +74,7 @@
            
         width: 100vw;
         height: 100vh;
-        background: url('https://miro.medium.com/v2/resize:fit:1440/format:webp/1*ppeZvEyexRO_WQHK1It6Cg.jpeg');
+        background: url('/assets/fall-street-background.webp');
         background-size: cover;
         background-attachment: fixed;
         }
