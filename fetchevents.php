@@ -1,9 +1,9 @@
 <?php
 
 $DBhostname = getenv("SQLHOSTNAME");
-$usersDB = getenv("CSC131USERDBNAME");
-$DBusername = getenv("CSC131USERDBUSER");
-$DBpassword = getenv("CSC131USERDBPASS");
+$usersDB = getenv("CSC131EVENTSDBNAME");
+$DBusername = getenv("CSC131EVENTSDBUSER");
+$DBpassword = getenv("CSC131EVENTSDBPASS");
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "GET") {
