@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<!DOCTYPE html>
 <style>
 :root {
   --rwgr: #043124;
@@ -78,7 +80,6 @@ body {
 .topnav {
     overflow: hidden;
     background-color: var(--white);
-    max-width: 1240px;
     margin-left: auto;
     margin-right: auto; 
     padding: 2rem 0 2rem;
@@ -95,12 +96,12 @@ body {
 }
 .signin-box{
   margin: auto;
-  width: 30%;
+  width: 25%;
   text-align: center;
   border: 3px solid green;
   padding: 10px;
 }
-.singin-box .img-container{
+.signin-box .img-container{
   width: inherit;
   height: inherit;
 }
@@ -116,7 +117,7 @@ body {
     
 
 }
-.signin-nav a{
+.signin-nav a, .account-dropdown{
     padding: 0.5rem;
     color: var(--white);
     font-size: 1.25rem;
@@ -128,8 +129,8 @@ body {
 }
 .signup-box {
   margin: auto;
-  width : 30%;
-  padding: 10px;
+  width : 25%;
+  padding: 20px 10px 50px;
   text-align: center;
   border: 1px solid green;
   box-shadow: 3px 3px 3px grey;
@@ -139,22 +140,26 @@ body {
   text-align: left;
 }
 .signup-box .form-container{
-  padding: 16px;
+  padding: 16px 16px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 0;
 
 }
-.signup-box input {
+.signup-box input:not([type="checkbox"]) {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--black40a);
   box-sizing: border-box;
 }
 .signup-box input[type="password"] {
  /* margin-bottom: 0px;*/
+}
+.signup-button {
+  color: var(--rwgr);
 }
 
 .signup-box .password-validation{
@@ -170,24 +175,25 @@ body {
   display: flex;
   align-items: center;
   text-align: center;
+  padding: 10px 0;
 }
 
 .signup-box .line {
   flex-grow: 1;
   height: 1px;
-  background-color: #ccc;
+  background-color: var(--black40a);
   margin: 0 10px;
 }
 
 .signup-box .text {
-  color: #ccc;
+  color: var(--black40a);
 }
 .password-validation li{
   color: red;
   margin-top: 0px;
 }
 .existingAccount {
-  font-size: 12px;
+  font-size: 1.25rem;
   display: inline-block;
 }
 
@@ -242,8 +248,8 @@ body {
 .buttonIndent {
  text-indent: 20px
 }
-button {
-  background-color: var(--spgr);
+.signup-box button{
+  background-color: var(--stgr);
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -252,20 +258,80 @@ button {
   width: 100%;
   font-size: 17px;
 }
-.img { 
+.topnav .img { 
     max-width: 100%;
-    width: 45%;
     min-width: 180px;
-    vertical-align: middle;
+    width: 45%;
     border-style: none;
     box-sizing: content-box;
     line-height: 30px;
     display: inline-flex;
-    flex: 0 0 35%;
 }
+
+.account-dropdown {
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Changed from justify to justify-content */
+    background-color: var(--rwgr);
+    flex-wrap: nowrap;
+    font-weight: 600;
+    z-index: 1;
+}
+.account-dropdown a {
+  background-color: var(--stgr);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  text-align: right;
+}
+
+/* Style for the dropdown button */
+.dropbtn {
+    color: white;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Added to vertically center content */
+}
+
+/* Style for the dropdown content */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    white-space: nowrap;
+    max-height: 200px;
+    overflow-y: auto;
+
+    /* Position the top of the dropdown at the bottom of the root element */
+    top: 100%;
+    bottom: auto;
+    right: 0;
+    left: auto;
+}
+
+/* Style for the buttons inside the dropdown */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Show the dropdown content when hovering over the dropdown button */
+.account-dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 </style>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
@@ -294,39 +360,79 @@ function checkCookie() {
         googleTranslateElementInit();
     }
 }
-
 window.onload = checkCookie;
 
-</script>
-<div class="topnav-container">
-    <div class="signin-nav">
-        <div id="google_translate_element" style="color: var(--white); align-content: center; float: right; margin-right: auto"></div>
-        <div id="user-account" style="display: none">Hello </div>
-        <a href="/account/login.php">Sign In</a>
-
-    </div>
-    <div style="clear: both;"></div>
-    <div class="topnav" id="topnav">
-        <div class="container nav">
-            <img src="/assets/sac-state-logo.png" class="img">  
-            <a href="/">Home</a>
-            <a href="/events.php">Events</a>
-            <a href="/forum.php">Community Forum</a>
-            <a href="/map.php">Map</a>
-            <a href="/faq.php">FAQ</a>
-            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
-        </div>
-  </div>
-
-<script type="text/javascript">
-    function showHamburgerMenu() {
-      var x = document.getElementById("topnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
+function showHamburgerMenu() {
+    var x = document.getElementById("topnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
     }
+  }
+
+$(document).ready(function() {
+    // Perform an AJAX request to get the identicon based on the user's email
+  $.ajax({
+    type: 'GET',
+    url: '/account/generateUserIcon.php',
+    success: function(data) {
+      // Set the image source to the data received from the server
+      $('#identicon').attr('src', 'data:image/png;base64,' + data.image);
+    },
+    error: function() {
+      console.error('Failed to load identicon.');
+    }
+  });
+});
+
+
+</script>
+
+
+<!--if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
+                  echo "<a href=\"#/account/dashboard.php\">Dashboard</a>";
+                  echo "<a href=\"/account/logout.php\">Logout</a>";
+                } else{
+                  echo "<a href=\"/account/login.php\">Login</a>";
+                }
+                ?>//-->
+<div>
+<div class="signin-nav">
+  <div id="google_translate_element" style="color: var(--white); align-content: center; float: right; margin-right: auto"></div>
+  <div id="user-account" style="display: none">Hello </div>
+  <!--a href="/account/login.php">Sign In</a//-->
+  <?php
+  if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
+    echo "<div class=\"account-dropdown\">
+            <div id=\"identicon-container\">
+              <img id=\"identicon\" style=\"max-width: 35px; max-height: 35px; border: 1px solid black; border-radius: 50%;\"class=\"dropbtn\">
+            </div>
+            <div class=\"dropdown-content\">
+              <a href=\"/account/dashboard.php\">Dashboard</a>
+              <a href=\"/account/logout.php\">Logout</a>
+            </div>
+          </div>";
+  } else{
+    echo "<a href=\"/account/login.php\">Log In</a>";
+  }
+  ?>  
+
+</div>
+<div style="clear: both;"></div>
+<div class="topnav" id="topnav">
+  <div class="container nav">
+      <img src="/assets/sac-state-logo.png" class="img">  
+      <a href="/">Home</a>
+      <a href="/events.php">Events</a>
+      <a href="/forum.php">Community Forum</a>
+      <a href="/map.php">Map</a>
+      <a href="/faq.php">FAQ</a>
+      <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>
+  </div>
+</div>
+<script type="text/javascript">
+  
     
   </script>
 </div>
