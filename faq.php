@@ -1,13 +1,11 @@
 <?php include("./header.php") ?>
-
-<!-- Everything else in the FAQ page that's not the header -->
-<!-- This section has the 3 columns and links to external -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FAQ</title>
     <link rel="stylesheet" href="faqStyle.css"> 
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 </head>
 
 <body>
