@@ -1,121 +1,15 @@
-<!DOCTYPE html>
-<html>
-<style>
-    h1 {
-        padding: 16px 16px 16px 16px;   
-        background-color: rgba(0,0,0,0.4);
-        border-radius: 20px;
-    }
-</style>
-    <head>
-        
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>FAQ</title>
-        <?php include("./header.php") ?>
-        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-    </head>
-</html>
+<?php include("./header.php") ?>
 
 <!-- Everything else in the FAQ page that's not the header -->
+<!-- This section has the 3 columns and links to external -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FAQ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #fff;
-        }
-        .header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url('assets/SacState_Fall.jpg'); /* Set the background image using the relative path */
-            background-size: cover; /* Cover the entire area of the box */
-            background-position: center; /* Center the image in the box */
-            background-repeat: no-repeat; /* Do not repeat the image */
-            color: white;
-            padding: 16px;
-        }
-
- /*Second row and links to different questions  */
-    .faq-container {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        margin: auto;
-    }
-    .faq-column {
-        width: calc(33.333% - 40px); /* Adjust the width to account for margin/padding */
-        margin: 0 20px; /* This adds margin to the left and right of each column */
-        background-color: #f9f9f9;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        color: #004e38;
-        height: 130px;
-        flex-direction: column; /* Stack children vertically */
-        justify-content: center; /* Center children vertically */
-        align-items: center; /* Center children horizontally */
-        text-align: center; /* Center text for inline or inline-block elements */
-
-    }
-    .faq-accordion {
-        border-bottom: 1px solid #ddd;
-        padding: 8px 0;
-        cursor: pointer;
-    }
-    .faq-accordion:hover {
-        background-color: #f0f0f0;
-    }
-    .faq-accordion:last-child {
-        border-bottom: none;
-    }
-    .faq-accordion h2 {
-        font-size: 20px;
-        margin: 0;
-    }
-    .faq-accordion-content {
-        display: none;
-        padding: 15px;
-        background-color: #f0f0f0;
-        border-top: 1px solid #ddd;
-    }
-    .column-title {
-        font-weight: bold;
-        margin-bottom: 10px;
-        font-size: 24px; /* Set the font size to 16px */
-        color: #004e38
-    }
-    .faq-column a {
-        display: block;
-        text-decoration: none;
-        color: #333;
-        margin-bottom: 0.1em;
-        font-size: 18px;
-    }
-    .faq-column a:hover {
-        color: var(--brz);
-    }
-    a:active{
-        color: yellow;
-    }
-    .Questions-container{
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-    }
-    .Questions-header{
-        font-weight: bold;
-        margin-bottom: 10px;
-        
-    }
-
-
-</style>
+    <link rel="stylesheet" href="faqStyle.css"> 
 </head>
+
 <body>
     <div class="header">
         <h1>Frequently Asked Questions</h1>
@@ -123,78 +17,40 @@
     </div>
     <div class="faq-container">
         <div class="faq-column">
-            <div class="column-title">About the Campus</div>
+            <div class="column-title">About the Campus</div><!-- Column One in section -->
             <a href="map.php">Map</a><br>
             <a href="https://www.dining.csus.edu/campus-eateries-2/">On Campus Eatery</a><br>
             <a href="https://www.csus.edu/international-programs-global-engagement/international-student-scholar-services/housing.html">Housing Options</a>
         </div>
         <div class="faq-column">
-            <div class="column-title">About the Events</div>
+            <div class="column-title">About the Events</div> <!-- Column Two in section -->
             <a href="https://www.xe.com/currencyconverter/">Currency Exchange Rate</a><br>
             <a href="https://www.csus.edu/student-life/">Student Life</a><br>
             <a href="https://events.csus.edu/">Campus Events</a>
         </div>
         <div class="faq-column">
-            <div class="column-title">About Us</div>
+            <div class="column-title">About Us</div> <!-- Column Three in section -->
             <a href="https://www.csus.edu/experience/fact-book/about-sac-state.html">Sacramento State Info</a><br>
             <a href="https://www.csus.edu/international-programs-global-engagement/international-student-scholar-services/">Student Programs</a><br>
             <a href="http://www.csus.edu">More info</a>
         </div>
     </div>
     <br>
+</body>
+</html>
 
+<!--This section contains the HTML for the Questions below and asked questions   -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FAQ Section</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-  }
-  .faq-header2 {
-    color: #004e38; /* Color */
-    font-size: 24px;
-    margin-bottom: 10px;
-    text-align: center; /* Centers text horizontally */
-  }
-  .faq-content2 {
-    font-size: 20px;
-    line-height: 1.6;
-    color: #333; /* Dark text color */
-    text-align: 10px;
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  .faq-section2 {
-    background-color: #f5f5f5; /* Light grey background */
-    color: #198754;
-    font-weight: bold;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center; /* Centers text horizontally */
-  }
-  .faq-question2 {
-    color: #004e38; /* Light Green Color */
-    font-weight: bold;
-    width: fit-content; /* Specify a width or set it to fit-content */
-    margin-left: auto;
-    margin-right: auto; /* These auto margins center the block-level element *
-  }
-  .faq-link2 {
-    color: #1a5a96; /* Blue color for links */
-    text-decoration: none;
-  }
-  .faq-link2:hover {
-    text-decoration: underline;
-  }
-</style>
-</head>
-<body>
 
+</head>
+
+<body>
+<!--Any questions can be added down below by following the format provided below  -->
 <div class="faq-section2">
   <div class="faq-content2">
      If you are interested in Sacramento State University, we provides a wide array of student services which are not limited to enrollment, Community Involvement, local events, and student wellbeing. Please see our commonly asked questions below.
