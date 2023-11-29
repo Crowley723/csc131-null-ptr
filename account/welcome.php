@@ -1,12 +1,5 @@
 <?php 
-ob_start();
-include("../header.php");
-if(!isset($_SESSION['Email']) && !isset($_SESSION['FullName'])){
-    header("Location: /index.php");
-    ob_flush();
-    exit();
-}
-ob_flush();
+header("Location: /");
 
 ?>
 <!DOCTYPE html>

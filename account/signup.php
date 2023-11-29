@@ -69,7 +69,7 @@
                 <input type="email" id="email" name="email" placeholder="Enter Email" required><br><br>
 
                 <label for="studentID" class="entry-label">Student ID: </label><br>
-                <input type="text" id="studentID" name="studentID" placeholder="Enter Student ID" inputmode="numeric" pattern="[0-9]+" required/><br><br>
+                <input type="text" id="studentID" name="studentID" placeholder="Enter Student ID" inputmode="numeric" pattern="^\d{9}$" required/><br><br>
 
                 <label for="password1" class="entry-label">Password: </label><br>
                 <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter Password" onkeyup="checkPassword()" required><br><br>

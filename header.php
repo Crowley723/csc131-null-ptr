@@ -73,6 +73,10 @@ body {
   margin:0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+.topnav-container{
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
 .topnav {
     overflow: hidden;
     background-color: var(--white);
@@ -81,6 +85,7 @@ body {
     padding: 2rem 0 2rem;
     box-sizing: border-box;
     clear: both;
+    
 }
 .container {
     width: 90%;
@@ -204,9 +209,11 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     transition: color 1s;
+    
 }
 .topnav .nav a:hover{
     color: var(--brz);
+    
 }
 .topnav .icon {
     display: none;
@@ -382,6 +389,7 @@ $(document).ready(function() {
 
 </script>
 
+
 <!--if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
                   echo "<a href=\"#/account/dashboard.php\">Dashboard</a>";
                   echo "<a href=\"/account/logout.php\">Logout</a>";
@@ -398,7 +406,7 @@ $(document).ready(function() {
   if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
     echo "<div class=\"account-dropdown\">
             <div id=\"identicon-container\">
-              <img id=\"identicon\" style=\"max-width: 35px; max-height: 35px; border: 1px solid black;\"class=\"dropbtn\">
+              <img id=\"identicon\" style=\"max-width: 35px; max-height: 35px; border: 1px solid black; border-radius: 50%;\"class=\"dropbtn\">
             </div>
             <div class=\"dropdown-content\">
               <a href=\"/account/dashboard.php\">Dashboard</a>
