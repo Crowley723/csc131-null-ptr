@@ -4,7 +4,7 @@
 <style>
     body {
     overflow-x: hidden;
-    background-image: url("https://miro.medium.com/v2/resize:fit:640/format:webp/1*ppeZvEyexRO_WQHK1It6Cg.jpeg");
+    background-image: url("/assets/fall-street-background.webp");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
