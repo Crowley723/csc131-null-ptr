@@ -80,7 +80,6 @@ body {
 .topnav {
     overflow: hidden;
     background-color: var(--white);
-    max-width: 1600px;
     margin-left: auto;
     margin-right: auto; 
     padding: 2rem 0 2rem;
