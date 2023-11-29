@@ -5,6 +5,14 @@
     h1 {
         padding: 16px 16px 16px 16px;   
     }
+    body {
+           
+           width: 100vw;
+           height: 100vh;
+           background: url('/images/backgroundPic.jpg');
+           background-size: cover;
+           background-attachment: fixed;
+           }
 </style>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
