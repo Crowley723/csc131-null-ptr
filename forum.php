@@ -9,7 +9,7 @@
            
            width: 100vw;
            height: 100vh;
-           background: url('/images/backgroundPic.jpg');
+           background: url('/images/fall_tree_background.jpg');
            background-size: cover;
            background-attachment: fixed;
            }
