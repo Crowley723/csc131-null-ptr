@@ -1,26 +1,17 @@
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #fff;
 }
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url('assets/SacState_Fall.jpg'); /* Set the background image using the relative path */
-    background-size: cover; /* Cover the entire area of the box */
-    background-position: center; /* Center the image in the box */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    color: white;
-    padding: 16px;
+h1 {
+    padding: 16px 16px 16px 16px;
+    text-align: center; 
+    background-color:#dad490;
+    color: black;
+    margin: 0px;
 }
-.header h1{
-    background-color: rgba(0,0,0,0.4);
-    border-radius: 20px; /* rounded out background */
-    padding: 10px 20px; /* Add some padding around the text */
-}
+
 
 
 /*Section with 3 columns and links to different questions  */
