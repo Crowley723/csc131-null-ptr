@@ -6,14 +6,16 @@
         padding: 16px 16px 16px 16px;   
     }
     body {
-           
-           width: 100vw;
-           height: 100vh;
-           background: url('/images/fall_tree_background.jpg');
-           background-size: cover;
-           background-attachment: fixed;
-           overflow-x: hidden;
-           }
+
+        width: 100vw;
+        height: 100vh;
+        background: url('/images/fall_tree_background.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        overflow-x: hidden;
+    }
+    
+    
 </style>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,11 +45,9 @@
     
 
     <!--<h1>Community Fourm</h1>-->
-    <nav>
-        <div class="nav-left">
-            <h1>Community Fourm</h1>
-        </div>
-    </nav>
+
+    <div class="title-shit"><h1>Share Your Thoughts</h1></div>
+
 
     <div class="container">
     <!-------- left-sidebar -------- -->    
@@ -67,9 +67,9 @@
         <!-- Modal -->
         <div id="postModal" class="modal">
             <div class="modal-content">
-                <h2>Share Your Thoughts</h2>
-                <form action="/createForumPost.php" method="POST">
-                    <textarea id="postText" name="postText" placeholder="Type your post here" required></textarea>
+                <h2>Create a Post</h2>
+                <form action="/createForumPost.php" method="POST" style="padding:8px">
+                    <textarea id="postText" style="padding:8px"name="postText" placeholder="Type your post here" required></textarea>
                     <input type="submit">
                     <button type="button" onclick="closeModal()" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 </form>

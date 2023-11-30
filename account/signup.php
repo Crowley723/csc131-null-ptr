@@ -5,6 +5,14 @@
     h1 {
         padding: 16px 16px 16px 16px;   
     }
+    body{
+        background-image: url('/assets/fall-street-background.webp');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Optional: fixed background */
+        margin: 0; /* Remove default body margin */
+        padding: 0; /* Remove default body padding */
+    }
     
 </style>
     <head>

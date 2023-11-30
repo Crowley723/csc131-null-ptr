@@ -73,19 +73,18 @@ body {
   margin:0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-.topnav-container{
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: white;
-}
+.title-shit{
+    padding: 1vh 0;
+    text-align: center;
+    background-color: var(--wgo);
+    color: black;
+    margin: 0px;
+  }
 .topnav {
     overflow: hidden;
     background-color: var(--white);
-    margin-left: auto;
-    margin-right: auto; 
-    padding: 2rem 0 2rem;
+    padding: 1vh 0 1vh;
     box-sizing: border-box;
-    clear: both;
-    
 }
 .container {
     width: 90%;
@@ -107,15 +106,12 @@ body {
 }
 .signin-nav {
     display: flex;
-    float: right;
-    justify: space-between;
-    justify-content: right;
+    justify-content: space-between;
     background-color: var(--rwgr);
     width: 100%;
-    flex-wrap: nowrap;
     margin: 0 auto;
-    
-
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
 .signin-nav a, .account-dropdown{
     padding: 0.5rem;
@@ -123,17 +119,18 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     text-align: center;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     text-decoration: none;
 
 }
 .signup-box {
-  margin: auto;
+  margin: 16px auto 16px;
   width : 25%;
   padding: 20px 10px 50px;
   text-align: center;
   border: 1px solid green;
   box-shadow: 3px 3px 3px grey;
+  background-color: white;
 
 }
 .signup-box .entry-label {
@@ -201,7 +198,7 @@ body {
     float: left;
     display: block;
     color: var(--black);
-    min-width: 160px;
+    min-width: 7.5vw;
     z-index: auto;
     text-align: center;
     padding: 0.5rem 1rem;
@@ -218,33 +215,74 @@ body {
 .topnav .icon {
     display: none;
 }
+
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 90%; /* Adjusted width for better responsiveness */
+  }
+
+  .topnav a {
+    min-width: auto; /* Allowing buttons to adjust their width based on content */
+  }
+}
+
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
+  .container {
+    flex-wrap: wrap; /* Allow items to wrap to the next line on small screens */
+  }
+
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn {
     display: none;
   }
+
   .topnav a.icon {
     float: right;
     display: block;
   }
-  .topnav.responsive {position: relative;}
+
+  .topnav.responsive {
+    position: relative;
+  }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
+
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+
+  .topnav.responsive .dropdown-content {
+    position: relative;
+  }
+
   .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;
   }
+
+  .signin-box,
+  .signup-box {
+    width: 90%; /* Adjusted width for better responsiveness */
+  }
+
+  /* Additional styles to stack menu items vertically when the menu is open */
+  .topnav.responsive .nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
+
 .buttonIndent {
  text-indent: 20px
 }
@@ -259,13 +297,18 @@ body {
   font-size: 17px;
 }
 .topnav .img { 
+    /*height: 51px;
+    width: 500px;*/
+    max-height: 100%;
     max-width: 100%;
-    min-width: 180px;
-    width: 45%;
+    width: auto;
+    height: auto;
+
     border-style: none;
     box-sizing: content-box;
     line-height: 30px;
     display: inline-flex;
+    align-self: center;
 }
 
 .account-dropdown {
@@ -422,7 +465,7 @@ $(document).ready(function() {
 <div style="clear: both;"></div>
 <div class="topnav" id="topnav">
   <div class="container nav">
-      <img src="/assets/sac-state-logo.png" class="img">  
+      <img src="/assets/sac-state-logo-correct-500.png" class="img">  
       <a href="/">Home</a>
       <a href="/events.php">Events</a>
       <a href="/forum.php">Community Forum</a>

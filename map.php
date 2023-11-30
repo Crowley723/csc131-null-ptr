@@ -9,15 +9,13 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     margin:0;
-    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
+    .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+}
 
-    h1 {
-        text-align: center;
-        background-color: #cfb668;
-        padding: 10px;
-        margin: 0px 0px 10px 0px;
-    }
     
 </style>
     <head>
@@ -27,13 +25,16 @@
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body>
-        <h1>Find Everything You Need!</h1>
-
+        <div class="title-shit">
+            <h1>Find Everything You Need!</h1>
+        </div>
+    <div style="margin:3vh">
       <div style="width:100%; height:100%; border: 0; text-align: center;">
         <iframe src="https://storage.googleapis.com/maps-solutions-wgnv1xey12/neighborhood-discovery/l7z6/neighborhood-discovery.html"
         loading="lazy" style="width: 1000px; height: 530px; border: 0;">
       </iframe>
       </div>
+    </div>
   </body>
 </html>
 <?php include("./footer.php") ?>
