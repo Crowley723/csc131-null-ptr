@@ -123,6 +123,21 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+
+/* Apply hover effect to images within the event-card */
+.event-card img:hover {
+    opacity: 0.8; /* Adjust the opacity as needed */
+    transition: opacity 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Optional: Add a border or box-shadow on hover */
+.event-card img:hover {
+    border: 2px solid var(--ssgr); /* Adjust the border color and width as needed */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); /* Adjust the box-shadow as needed */
+}
+
+
+
         
 
 </style>
