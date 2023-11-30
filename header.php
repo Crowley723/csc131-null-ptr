@@ -124,12 +124,13 @@ body {
 
 }
 .signup-box {
-  margin: auto;
+  margin: 16px auto 16px;
   width : 25%;
   padding: 20px 10px 50px;
   text-align: center;
   border: 1px solid green;
   box-shadow: 3px 3px 3px grey;
+  background-color: white;
 
 }
 .signup-box .entry-label {
