@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="title-shit">
         <h1>Frequently Asked Questions</h1>
         
     </div>
