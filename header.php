@@ -198,7 +198,7 @@ body {
     float: left;
     display: block;
     color: var(--black);
-    min-width: 160px;
+    min-width: 7.5vw;
     z-index: auto;
     text-align: center;
     padding: 0.5rem 1rem;
@@ -215,33 +215,74 @@ body {
 .topnav .icon {
     display: none;
 }
+
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 90%; /* Adjusted width for better responsiveness */
+  }
+
+  .topnav a {
+    min-width: auto; /* Allowing buttons to adjust their width based on content */
+  }
+}
+
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child), .dropdown .dropbtn {
+  .container {
+    flex-wrap: wrap; /* Allow items to wrap to the next line on small screens */
+  }
+
+  .topnav a:not(:first-child),
+  .dropdown .dropbtn {
     display: none;
   }
+
   .topnav a.icon {
     float: right;
     display: block;
   }
-  .topnav.responsive {position: relative;}
+
+  .topnav.responsive {
+    position: relative;
+  }
+
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
-  .topnav.responsive .dropdown {float: none;}
-  .topnav.responsive .dropdown-content {position: relative;}
+
+  .topnav.responsive .dropdown {
+    float: none;
+  }
+
+  .topnav.responsive .dropdown-content {
+    position: relative;
+  }
+
   .topnav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;
   }
+
+  .signin-box,
+  .signup-box {
+    width: 90%; /* Adjusted width for better responsiveness */
+  }
+
+  /* Additional styles to stack menu items vertically when the menu is open */
+  .topnav.responsive .nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }
+
 .buttonIndent {
  text-indent: 20px
 }
@@ -256,8 +297,13 @@ body {
   font-size: 17px;
 }
 .topnav .img { 
-    height: 51px;
-    width: 500px;
+    /*height: 51px;
+    width: 500px;*/
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+
     border-style: none;
     box-sizing: content-box;
     line-height: 30px;
