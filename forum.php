@@ -12,6 +12,7 @@
            background: url('/images/fall_tree_background.jpg');
            background-size: cover;
            background-attachment: fixed;
+           overflow-x: hidden;
            }
 </style>
     <head>
