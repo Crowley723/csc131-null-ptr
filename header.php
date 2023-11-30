@@ -123,7 +123,7 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     text-align: center;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.5rem;
     text-decoration: none;
 
 }
