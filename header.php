@@ -73,14 +73,17 @@ body {
   margin:0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
-.topnav-container{
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: white;
-}
+.title-shit{
+    padding: 1vh 0;
+    text-align: center;
+    background-color: var(--wgo);
+    color: black;
+    margin: 0px;
+  }
 .topnav {
     overflow: hidden;
     background-color: var(--white);
-    padding: 2rem 0 2rem;
+    padding: 1vh 0 1vh;
     box-sizing: border-box;
 }
 .container {
@@ -252,13 +255,13 @@ body {
   font-size: 17px;
 }
 .topnav .img { 
-    max-width: 100%;
-    min-width: 180px;
-    width: 45%;
+    height: 51px;
+    width: 500px;
     border-style: none;
     box-sizing: content-box;
     line-height: 30px;
     display: inline-flex;
+    align-self: center;
 }
 
 .account-dropdown {
@@ -415,7 +418,7 @@ $(document).ready(function() {
 <div style="clear: both;"></div>
 <div class="topnav" id="topnav">
   <div class="container nav">
-      <img src="/assets/sac-state-logo.png" class="img">  
+      <img src="/assets/sac-state-logo-correct-500.png" class="img">  
       <a href="/">Home</a>
       <a href="/events.php">Events</a>
       <a href="/forum.php">Community Forum</a>
