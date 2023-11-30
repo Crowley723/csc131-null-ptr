@@ -80,12 +80,8 @@ body {
 .topnav {
     overflow: hidden;
     background-color: var(--white);
-    margin-left: auto;
-    margin-right: auto; 
     padding: 2rem 0 2rem;
     box-sizing: border-box;
-    clear: both;
-    
 }
 .container {
     width: 90%;
@@ -107,15 +103,12 @@ body {
 }
 .signin-nav {
     display: flex;
-    float: right;
-    justify: space-between;
-    justify-content: right;
+    justify-content: space-between;
     background-color: var(--rwgr);
     width: 100%;
-    flex-wrap: nowrap;
     margin: 0 auto;
-    
-
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
 .signin-nav a, .account-dropdown{
     padding: 0.5rem;
