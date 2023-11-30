@@ -3,16 +3,18 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background: #fcfcfc;
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
-footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+html {
+    height: 100%;
+}
+footer {
+    margin-top: auto;
     background: #043124;
-    height: auto;
     width: 100vw;
     font-family: "Open Sans";
     padding-top: 40px;

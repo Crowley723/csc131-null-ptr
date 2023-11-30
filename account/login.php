@@ -80,3 +80,4 @@ ob_flush();
     </body>
 </body>
 </html>
+<?php include("../footer.php") ?>

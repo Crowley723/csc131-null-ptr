@@ -164,3 +164,4 @@
         }
     </script>
 </html>
+<?php include("../footer.php") ?>

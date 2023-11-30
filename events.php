@@ -259,10 +259,196 @@ input[type=checkbox] {
     </div>
     </body>
 
-<div id="event-container"class="event-container">
+    <div id="event-container" class="event-container">
 
 
-</div> 
+<div class="event-card">
+                            <a href="https://www.eventbrite.com/e/christmas-potluck-brunch-registration-737288207877?aff=ebdssbdestsearch
+">
+                                <img src="/assets/potLockEvent.jpg" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>Potluck Brunch</b></h4>
+                                <a class="button" href="#modal1">More info</a>
+                                <div class="popup" id="modal1">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: </p>
+                                        <p>COST:$0</p>
+                                        <p>LOCATION: Spiritual Life Center 2201 Park Towne Circle Sacramento, CA 95825</p>
+                                        <a href="https://www.eventbrite.com/e/christmas-potluck-brunch-registration-737288207877?aff=ebdssbdestsearch
+">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://www.eventbrite.com/e/the-official-christmas-bar-crawl-sacramento-tickets-754319880067?aff=ebdssbdestsearch">
+                                <img src="/assets/BarCrawlEvent.jpg" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>Christmas Bar Crawl</b></h4>
+                                <a class="button" href="#modal2">More info</a>
+                                <div class="popup" id="modal2">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: Join us for the ultimate Christmas bar crawl in Sacramento, where the holiday spirit and good times collide on December 16th, 2023</p>
+                                        <p>COST:$10</p>
+                                        <p>LOCATION: Tipsy Putt 630 K Street ##120 Sacramento, CA 95814</p>
+                                        <a href="https://www.eventbrite.com/e/the-official-christmas-bar-crawl-sacramento-tickets-754319880067?aff=ebdssbdestsearch">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://www.eventbrite.com/e/muppet-christmas-carol-1992-tickets-712168082907?aff=ebdssbdestsearch
+">
+                                <img src="/assets/muppetsCarol.webp" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>Muppet Christmas Carol
+</b></h4>
+                                <a class="button" href="#modal3">More info</a>
+                                <div class="popup" id="modal3">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: The Muppets present their own touching rendition of Charles Dickens' classic tale.</p>
+                                        <p>COST:$10</p>
+                                        <p>LOCATION: Crest Theatre 1013 K St Sacramento, CA 95814</p>
+                                        <a href="https://www.eventbrite.com/e/muppet-christmas-carol-1992-tickets-712168082907?aff=ebdssbdestsearch
+">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://allevents.in/sacramento/psychic-medium-john-edward-sacramento-ca/200025316912244?ref=eventlist-cat#">
+                                <img src="/assets/psychicEvent.jpg" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>Psychic Medium John Edward</b></h4>
+                                <a class="button" href="#modal4">More info</a>
+                                <div class="popup" id="modal4">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: See Psychic Medium John Edward live on tour! This is your chance to be part of a live group audience to watch John Edward connect with the other side. There will be question and answer sessions and messages from the other side. Is someone waiting to talk to you?</p>
+                                        <p>COST:$0</p>
+                                        <p>LOCATION: Hilton Sacramento Arden West, 2200 Harvard St,Sacramento,CA,United States</p>
+                                        <a href="https://allevents.in/sacramento/psychic-medium-john-edward-sacramento-ca/200025316912244?ref=eventlist-cat#">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://allevents.in/sacramento/kawaii-rave-sacramento-21/10000740931495047?ref=eventlist-cat#">
+                                <img src="/assets/raveEvent.jpg" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>Kawaii Rave</b></h4>
+                                <a class="button" href="#modal5">More info</a>
+                                <div class="popup" id="modal5">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: Anime Inspired Rave Specializing in EDM, K-Pop, Hyperpop and Cosplay</p>
+                                        <p>COST:$15</p>
+                                        <p>LOCATION: 2326 J St, 2326 J Street, Sacramento, United States </p>
+                                        <a href="https://allevents.in/sacramento/kawaii-rave-sacramento-21/10000740931495047?ref=eventlist-cat#">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://allevents.in/sacramento/v1011-holiday-jam-2023/210003072356559?ref=eventlist-cat#">
+                                <img src="/assets/e40Event.webp" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>E-40's Holiday Jam</b></h4>
+                                <a class="button" href="#modal6">More info</a>
+                                <div class="popup" id="modal6">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: E-40 which is specially known for Music, Hip-Hop/Rap.
+Mya which is specially known for Music, R&amp;B.
+Blackstreet which is specially known for Music, R&amp;B.
+Mistah Fab which is specially known for Music, Hip-Hop/Rap.
+DJ Quik which is specially known for Music, Hip-Hop/Rap.
+Sage the Gemini which is specially known for Music, Hip-Hop/Rap.
+Baby Bash which is specially known for Music, R&amp;B.
+Frankie J which is specially known for Music, R&amp;B.
+Petey Pablo which is specially known for Music, Hip-Hop/Rap.
+Lumidee which is specially known for Music, R&amp;B.
+Lighter Shade of Brown which is specially known for Music, Hip-Hop/Rap.</p>
+                                        <p>COST:$50</p>
+                                        <p>LOCATION: Golden 1 Center, Sacramento, United States</p>
+                                        <a href="https://allevents.in/sacramento/v1011-holiday-jam-2023/210003072356559?ref=eventlist-cat#">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://www.eventbrite.com/e/mlk-celebration-sacramento-celebrating-25-years-january-27-2024-tickets-528732983587">
+                                <img src="/assets/MLKEvent.jpg" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>MLK 25th Celebration</b></h4>
+                                <a class="button" href="#modal7">More info</a>
+                                <div class="popup" id="modal7">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: Description: The Annual MLK Celebration symbolizes the principles of freedom and unity and the celebration of diversity that highlighted the life of Dr. Martin Luther King Jr. Hosted in the Capital of California, this event serves as one of the largest gatherings of elected officials, judicial members, law enforcement, nonprofits, community members, business leaders and students from our region and beyond. Your sponsorship will enable us to energize and help the next generation connect to the work of those who have come before them.</p>
+                                        <p>COST:$65</p>
+                                        <p>LOCATION: 6000 J Street University Student Union Sacramento, CA 95819-6022</p>
+                                        <a href="https://www.eventbrite.com/e/mlk-celebration-sacramento-celebrating-25-years-january-27-2024-tickets-528732983587">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://allevents.in/sacramento/new-year-challenge-year-of-the-dragon-2024;-2024;-2024-mile-save-$2/10000722542312507?ref=eventlist-cat#">
+                                <img src="/assets/yearOfDragonEvent.jpg" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>New Year Challenge of the Dragon</b></h4>
+                                <a class="button" href="#modal8">More info</a>
+                                <div class="popup" id="modal8">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION: </p>
+                                        <p>COST:$18</p>
+                                        <p>LOCATION: Participate from home! Sacramento, CA 95813</p>
+                                        <a href="https://allevents.in/sacramento/new-year-challenge-year-of-the-dragon-2024;-2024;-2024-mile-save-$2/10000722542312507?ref=eventlist-cat#">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="event-card">
+                            <a href="https://allevents.in/sacramento/hot-and-funny-comedians/10000699177076457?ref=eventlist-cat#">
+                                <img src="/assets/comedyEvent.jpg" alt="Event Image" style="width:50%">
+                            </a>
+                            <div class="text-container">
+                                <h4><b>Hot and Funny Comedians</b></h4>
+                                <a class="button" href="#modal9">More info</a>
+                                <div class="popup" id="modal9">
+                                    <a class="popup__overlay" href="#"></a>
+                                    <div class="popup__wrapper">
+                                        <a class="popup__close" href="#">Close</a>
+                                        <p>DESCRIPTION:  S?ee Sureni Weerasekera and Sydney Stigerts live at Sacramento Comedy Spot!
+
+Both comedians have garnered followings on social media through stand-up and are regulars in the festival circuit.
+
+Sydney Stigerts: With her blonde pompadour and blunt sarcasm, Sydney Stigerts established herself in the comedy scene at a young age. She delights in skewering her millennial peers almost as much as she likes mocking her queer community. On stage, she is high energy, relatable, and would love to tell you a story. Sydney has taken social media by storm and has become a viral sensation. She has performed at Big Pine Comedy Festival and Laughed Out Queer Festival in Las Vegas.
+
+Sureni Weerasekera is a Sri Lankan-born, San Diego-raised, &amp; New York-based stand-up comedian, actor, and writer. She is known for her lighthearted, conversational banter to her ruthless, dark jabs that shed light on cultural dilemmas in a palatable, enticing way. has performed at San Francisco Sketchfest, New York Comedy Festival and Silicon Valley Pride Festival.
+
+6?:30 PM Doors / 7 PM Show</p>
+                                        <p>COST:$15</p>
+                                        <p>LOCATION: Sacramento Comedy Spot, 1050 20th Street, Sacramento, United States </p>
+                                        <a href="https://allevents.in/sacramento/hot-and-funny-comedians/10000699177076457?ref=eventlist-cat#">Visit event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div></div> 
 
 
 </html>
+<?php include("./footer.php") ?>

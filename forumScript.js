@@ -255,4 +255,3 @@ function updatePost(parentID){
         }
     });
 }
-

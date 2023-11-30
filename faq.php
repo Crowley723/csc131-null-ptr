@@ -17,3 +17,4 @@
         <h1>FAQ PAGE!!!!</h1>
 </body>
 </html>
+<?php include("./footer.php") ?>
