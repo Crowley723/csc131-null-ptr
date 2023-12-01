@@ -3,6 +3,7 @@ ob_start();
 include("../header.php");
 if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
     // Redirect to welcome page
+    $_SESSION['Login Success'] = TRUE;
     header("Location: /account/welcome.php");
     ob_flush();
     exit();

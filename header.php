@@ -371,17 +371,94 @@ body {
     display: block;
 }
 
+.success-overlay {
+  display: none; /*block is enabled*/
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--spgr80a);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 999;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  cursor: pointer;
+}
+.success-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
 
 </style>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        autoDisplay: false,
-        multianguagePage: true
-    }, 'google_translate_element');
+document.addEventListener('DOMContentLoaded', function () {
+  
+<?php 
+if(isset($_SESSION['Email']) && isset($_SESSION['FullName']) && isset($_SESSION['Login Success']) && $_SESSION['Login Success'] === TRUE){
+  echo "showLoginSuccessOverlay();";
+  $_SESSION['Login Success'] = FALSE;
+}else if(isset($_SESSION['Signup Success']) && ($_SESSION['Signup Success'] === TRUE)){
+  echo "showSignupSuccessOverlay();";
+  $_SESSION['Signup Success'] = FALSE;
+} else if(isset($_SESSION['Logout Success']) && $_SESSION['Logout Success'] === TRUE){
+  echo "showLogoutSuccessOverlay();";
+  $_SESSION['Logout Success'] = FALSE;
+}
+?>
+  
+
+});
+
+
+function showLoginSuccessOverlay() {
+    var overlay = document.getElementById('login-success-overlay');
+    overlay.style.display = 'block';
+
+    setTimeout(function () {
+        overlay.classList.add('hidden');
+    }, 5000);
+}
+function showSignupSuccessOverlay() {
+    var overlay = document.getElementById('signup-success-overlay');
+    overlay.style.display = 'block';
+
+    setTimeout(function () {
+        overlay.classList.add('hidden');
+    }, 5000);
+}
+function showLogoutSuccessOverlay() {
+    var overlay = document.getElementById('logout-success-overlay');
+    overlay.style.display = 'block';
+
+    setTimeout(function () {
+        overlay.classList.add('hidden');
+    }, 5000);
+}
+function closeLoginOverlay(){
+  var overlay = document.getElementById('login-success-overlay');
+  overlay.classList.add('hidden');
+}
+function closeSignupOverlay(){
+  var overlay = document.getElementById('signup-success-overlay');
+  overlay.classList.add('hidden');
+}
+function closeLogoutOverlay(){
+  var overlay = document.getElementById('logout-success-overlay');
+  overlay.classList.add('hidden');
+}
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    autoDisplay: false,
+    multianguagePage: true
+  }, 'google_translate_element');
 }
 
 function setLanguage(selectedLanguage) {
@@ -394,14 +471,14 @@ function setLanguage(selectedLanguage) {
 }
 
 function checkCookie() {
-    var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)selectedLanguage\s*=\s*([^;]*).*$)|^.*$/, "$1");
-    if (cookieValue) {
-        // Use the stored language preference
-        setLanguage(cookieValue);
-    } else {
-        // Show the language selector popup
-        googleTranslateElementInit();
-    }
+  var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)selectedLanguage\s*=\s*([^;]*).*$)|^.*$/, "$1");
+  if (cookieValue) {
+      // Use the stored language preference
+      setLanguage(cookieValue);
+  } else {
+      // Show the language selector popup
+      googleTranslateElementInit();
+  }
 }
 window.onload = checkCookie;
 
@@ -445,6 +522,11 @@ $(document).ready(function() {
   <div id="google_translate_element" style="color: var(--white); align-content: center; float: right; margin-right: auto"></div>
   <div id="user-account" style="display: none">Hello </div>
   <!--a href="/account/login.php">Sign In</a//-->
+
+  <div id="login-success-overlay" class="success-overlay" onclick="closeLoginOverlay()">You have been logged in!</div>
+  <div id="signup-success-overlay" class="success-overlay" onclick="closeSuccessOverlay()">You have been signed up!</div>
+  <div id="logout-success-overlay" class="success-overlay" onclick="closeLogoutOverlay()" style="background-color: rgba(200, 0, 0, 0.8)">You have been logged out!</div>
+
   <?php
   if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
     echo "<div class=\"account-dropdown\">

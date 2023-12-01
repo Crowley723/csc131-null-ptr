@@ -82,6 +82,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setLoggedInDate($databaseConnection, $email);
                 session_regenerate_id();
 
+                $_SESSION['Login Success'] = TRUE;
+                
+
                 $databaseConnection->close();
                 header("Location: /account/welcome.php");
                 ob_flush();
