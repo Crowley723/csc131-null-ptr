@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: #fff;
+    overflow-x: hidden;
 }
 h1 {
     padding: 16px 16px 16px 16px;
@@ -26,6 +27,7 @@ h1 {
     margin: 0 20px; /* This adds margin to the left and right of each column */
     background-color: #f9f9f9;
     padding: 20px;
+    min-width: 20vw;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     color: #004e38;
     flex-direction: column; /* Stack children vertically */
@@ -33,6 +35,12 @@ h1 {
     align-items: center; /* Center children horizontally */
     text-align: center; /* Center text for inline or inline-block elements */
 
+}
+
+@media screen and (max-width: 600px){
+    .faq-column{
+        min-width: 0vw;
+    }
 }
 .faq-accordion {
     border-bottom: 1px solid #ddd;
