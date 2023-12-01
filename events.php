@@ -31,7 +31,7 @@ body {
     margin: 8px;
     text-align: center;
     justify-content: center;
-    background-color: rgba(50, 50, 50,0.8);
+    background-color: var(--white60a);
     border-radius: 15px;
     }
 
@@ -127,6 +127,31 @@ input[type=checkbox] {
             color: var(--ssgr);
         }
 
+.visit-event{
+    margin: 2vh;
+    padding: 8px 16px 8px;
+    background-color: var(--ssgr);
+    color: white;
+    border-radius: 8px;
+    display: block;
+    text-decoration: none;
+
+
+}
+.close-button{
+    padding: 8px 16px 8px;
+    background-color: var(--ssgr);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+
+}
+.popup__wrapper a,.popup__wrapper p {
+    margin: 1vh;
+    
+
+}
+
         
 
 </style>
@@ -153,13 +178,13 @@ input[type=checkbox] {
                                 <div class="popup" id="modal${event.ID}">
                                     <a class="popup__overlay" href="#"></a>
                                     <div class="popup__wrapper">
-                                        <a class="popup__close" href="#">Close</a>
+                                        <a class="close-button popup__close" href="#">Close</a>
                                         <h2>${event.Title}</h2>
                                         <p>${event.Description}</p>
                                         <p>${event.Location}</p>
                                         <p>DATE: ${event.Date}</p>
                                         <p>COST: $ ${event.Cost}</p>
-                                        <a href="${event.Link}">Visit event</a>
+                                        <a class="visit-event" href="${event.Link}">Visit event</a>
                                     </div>
                                 </div>
                             </div>
