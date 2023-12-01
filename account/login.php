@@ -3,6 +3,7 @@ ob_start();
 include("../header.php");
 if(isset($_SESSION['Email']) && isset($_SESSION['FullName'])) {
     // Redirect to welcome page
+    $_SESSION['Login Success'] = TRUE;
     header("Location: /account/welcome.php");
     ob_flush();
     exit();
@@ -16,6 +17,14 @@ ob_flush();
 <style>
     h1 {
         padding: 16px 16px 16px 16px;   
+    }
+    body{
+        background-image: url('/assets/fall-street-background.webp');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed; /* Optional: fixed background */
+        margin: 0; /* Remove default body margin */
+        padding: 0; /* Remove default body padding */
     }
     
     
@@ -80,3 +89,4 @@ ob_flush();
     </body>
 </body>
 </html>
+<?php include("../footer.php") ?>

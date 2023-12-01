@@ -117,6 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_stmt_execute($createUserQuery) === TRUE) {
         //echo "Signup successful!";
+        $_SESSION['Signup Successful'] = TRUE;
         header(("Location: /account/login.php"));
         mysqli_stmt_close($createUserQuery);
         $databaseConnection->close();

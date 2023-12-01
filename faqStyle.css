@@ -1,0 +1,127 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+h1 {
+    padding: 16px 16px 16px 16px;
+    text-align: center; 
+    background-color:#dad490;
+    color: black;
+    margin: 0px;
+}
+
+
+
+/*Section with 3 columns and links to different questions  */
+.faq-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: auto;
+}
+.faq-column {
+    width: calc(33.333% - 40px); /* Adjust the width to account for margin/padding */
+    margin: 0 20px; /* This adds margin to the left and right of each column */
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: #004e38;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+    text-align: center; /* Center text for inline or inline-block elements */
+
+}
+.faq-accordion {
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    cursor: pointer;
+}
+.faq-accordion:hover {
+    background-color: #f0f0f0;
+}
+.faq-accordion:last-child {
+    border-bottom: none;
+}
+.faq-accordion h2 {
+    font-size: 20px;
+    margin: 0;
+}
+.faq-accordion-content {
+    display: none;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+.column-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 24px; /* Set the font size to 16px */
+    color: #004e38
+}
+.faq-column a {
+    display: block;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 0.1em;
+    font-size: 18px;
+}
+.faq-column a:hover {
+    color: var(--brz);
+}
+a:active{
+    color: yellow;
+}
+.Questions-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.Questions-header{
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+
+
+/* Questions and Answers Section */
+  .faq-header2 {
+    color: #004e38; /* Color */
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center; /* Centers text horizontally */
+  }
+  .faq-content2 {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333; /* Dark text color */
+    text-align: 10px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .faq-section2 {
+    background-color: #f5f5f5; /* Light grey background */
+    color: #198754;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center; /* Centers text horizontally */
+  }
+  .faq-question2 {
+    color: #004e38; /* Light Green Color */
+    font-weight: bold;
+    width: fit-content; /* Specify a width or set it to fit-content */
+    margin-left: auto;
+    margin-right: auto; /* These auto margins center the block-level element *
+  }
+  .faq-link2 {
+    color: #1a5a96; /* Highlights for links */
+    text-decoration: none;
+  }
+  .faq-link2:hover {
+    text-decoration: underline;
+  }
