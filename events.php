@@ -84,8 +84,14 @@
         text-align: center; 
         background-color:#dad490;
         color: black;
-        font-family: Arial, Helvetica, sans-serif;
         margin: 0px;
+    }
+    .card-title {
+        padding: 16px 16px 16px 16px;
+        text-align: center; 
+        color: black;
+        margin: 0px;
+        font-weight: 750;
     }
     
     .event-card {
@@ -98,14 +104,12 @@
     margin: 8px;
     text-align: center;
     justify-content: center;
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(50, 50, 50,0.8);
+    border-radius: 15px;
     }
 
-    /* On mouse-over, add a deeper shadow */
-    .event-card:hover {
-    box-shadow: 0 0 12px 0 rgba(0,0,0,0.6);
-    }
+   
+
     .event-card img{
       
     }
@@ -128,7 +132,8 @@
     padding: 10px 16px;
     border-radius: 4px;
     color: #dad490;
-    font-family:'Times New Roman', Times, serif;
+    border-radius: 15px;
+    text-decoration: none;
 }
 [id^=modal] {
     display: none;
@@ -185,7 +190,7 @@ input[type=checkbox] {
             color: #dad490;  /* change as needed */
             text-decoration: none;
             width: 15%;  /* change as needed */
-            border-radius: 5px; /* rounded corners */
+            border-radius: 15px; /* rounded corners */
             gap: 16px; /* Adjust the gap between items as needed */
             padding: 16px;
         }
@@ -218,15 +223,17 @@ input[type=checkbox] {
                                 <img src="${event['Image Path']}" alt="Event Image" style="width:50%">
                             </a>
                             <div class="text-container">
-                                <h4><b>${event.Title}</b></h4>
+                                <h2 class="card-title">${event.Title}</h2>
                                 <a class="button" href="#modal${event.ID}">More info</a>
                                 <div class="popup" id="modal${event.ID}">
                                     <a class="popup__overlay" href="#"></a>
                                     <div class="popup__wrapper">
                                         <a class="popup__close" href="#">Close</a>
-                                        <p>DESCRIPTION: ${event.Description}</p>
-                                        <p>COST:$${event.Cost}</p>
-                                        <p>LOCATION: ${event.Location}</p>
+                                        <h2>${event.Title}</h2>
+                                        <p>${event.Description}</p>
+                                        <p>${event.Location}</p>
+                                        <p>DATE: ${event.Date}</p>
+                                        <p>COST: $ ${event.Cost}</p>
                                         <a href="${event.Link}">Visit event</a>
                                     </div>
                                 </div>
