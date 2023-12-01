@@ -1,3 +1,4 @@
+<?php include("./header.php") ?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -74,7 +75,7 @@
            
         width: 100vw;
         height: 100vh;
-        background: url('https://miro.medium.com/v2/resize:fit:1440/format:webp/1*ppeZvEyexRO_WQHK1It6Cg.jpeg');
+        background: url('/assets/fall-street-background.webp');
         background-size: cover;
         background-attachment: fixed;
         }
@@ -250,7 +251,7 @@ input[type=checkbox] {
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Events</title>
-        <?php include("./header.php") ?>
+        
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     </head>
     <body>
