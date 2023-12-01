@@ -148,7 +148,7 @@ input[type=checkbox] {
 }
 .popup__wrapper a,.popup__wrapper p {
     margin: 1vh;
-    
+
 
 }
 
@@ -169,7 +169,7 @@ input[type=checkbox] {
                         eventCard.className = 'event-card';
 
                         eventCard.innerHTML = `
-                            <a href="${event.Link}">
+                            <a href="${event.Link}" target="_blank">
                                 <img src="${event['Image Path']}" alt="Event Image" style="width:50%">
                             </a>
                             <div class="text-container">
@@ -184,7 +184,7 @@ input[type=checkbox] {
                                         <p>${event.Location}</p>
                                         <p>DATE: ${event.Date}</p>
                                         <p>COST: $ ${event.Cost}</p>
-                                        <a class="visit-event" href="${event.Link}">Visit event</a>
+                                        <a class="visit-event" href="${event.Link}" target="_blank">Visit event</a>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@ input[type=checkbox] {
         <div class="title-shit"><h1>Explore Events Around Your Campus Today!</h1></div>
         
         <div class="right-align" style="padding-right: 23px;">
-        <a class="link-box" href="https://catalog.csus.edu/academic-calendar/">CSUS Calendar </a>
+        <a class="link-box" href="https://catalog.csus.edu/academic-calendar/" target="_blank">CSUS Calendar </a>
     </div>
     </body>
 
