@@ -3,6 +3,7 @@
 <html>
 <style>
 
+
 body {
         
     width: 100vw;
@@ -10,6 +11,13 @@ body {
     background: url('/assets/fall-street-background.webp');
     background-size: cover;
     background-attachment: fixed;
+    }
+    .card-title {
+        padding: 16px 16px 16px 16px;
+        text-align: center; 
+        color: black;
+        margin: 0px;
+        font-weight: 750;
     }
 
     
@@ -23,16 +31,14 @@ body {
     margin: 8px;
     text-align: center;
     justify-content: center;
-    background-color: white;
-}
+    background-color: rgba(50, 50, 50,0.8);
+    border-radius: 15px;
+    }
 
-    /* On mouse-over, add a deeper shadow */
-.event-card:hover {
-    box-shadow: 0 0 12px 0 rgba(0,0,0,0.6);
-}
-.event-card img{
-    
-}
+  
+    .event-card img{
+      
+    }
 
     /* Add some padding inside the card container */
 .event-container {
@@ -50,8 +56,9 @@ body {
     border-color: var(--ssgr);
     background: var(--ssgr);
     padding: 10px 16px;
-    border-radius: 4px;
-    color: var(--wgo);
+    color: #dad490;
+    border-radius: 15px;
+    text-decoration: none;
 }
 [id^=modal] {
     display: none;
@@ -100,43 +107,25 @@ input[type=checkbox] {
 }
 
 .link-box {
-    display: inline-block;
-    text-align: center;
-    padding: 16px;
-    background-color: var(--ssgr);  /* change as needed */
-    color: var(--wgo);  /* change as needed */
-    text-decoration: none;
-    width: 15%;  /* change as needed */
-    border-radius: 5px; /* rounded corners */
-    gap: 16px; /* Adjust the gap between items as needed */
-    padding: 16px;
-}
-.right-align {
-    text-align: right;
-    padding: 10px;
-}
-.link-box:hover {
-    background-color: var(--wgo);  /* change as needed */
-    color: var(--ssgr);
-}
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-/* Apply hover effect to images within the event-card */
-.event-card img:hover {
-    opacity: 0.8; /* Adjust the opacity as needed */
-    transition: opacity 0.3s ease; /* Add a smooth transition effect */
-}
-
-/* Optional: Add a border or box-shadow on hover */
-.event-card img:hover {
-    border: 2px solid var(--ssgr); /* Adjust the border color and width as needed */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); /* Adjust the box-shadow as needed */
-}
-
-
+            display: inline-block;
+            text-align: center;
+            padding: 16px;
+            background-color: var(--ssgr);  /* change as needed */
+            color: #dad490;  /* change as needed */
+            text-decoration: none;
+            width: 15%;  /* change as needed */
+            border-radius: 15px; /* rounded corners */
+            gap: 16px; /* Adjust the gap between items as needed */
+            padding: 16px;
+        }
+        .right-align {
+            text-align: right;
+            padding: 10px;
+        }
+        .link-box:hover {
+            background-color: #dad490;  /* change as needed */
+            color: var(--ssgr);
+        }
 
         
 
@@ -159,15 +148,17 @@ html, body {
                                 <img src="${event['Image Path']}" alt="Event Image" style="width:50%">
                             </a>
                             <div class="text-container">
-                                <h4><b>${event.Title}</b></h4>
+                                <h2 class="card-title">${event.Title}</h2>
                                 <a class="button" href="#modal${event.ID}">More info</a>
                                 <div class="popup" id="modal${event.ID}">
                                     <a class="popup__overlay" href="#"></a>
                                     <div class="popup__wrapper">
                                         <a class="popup__close" href="#">Close</a>
-                                        <p>DESCRIPTION: ${event.Description}</p>
-                                        <p>COST:$${event.Cost}</p>
-                                        <p>LOCATION: ${event.Location}</p>
+                                        <h2>${event.Title}</h2>
+                                        <p>${event.Description}</p>
+                                        <p>${event.Location}</p>
+                                        <p>DATE: ${event.Date}</p>
+                                        <p>COST: $ ${event.Cost}</p>
                                         <a href="${event.Link}">Visit event</a>
                                     </div>
                                 </div>
