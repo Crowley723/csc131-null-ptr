@@ -37,7 +37,13 @@ body {
 
   
     .event-card img{
-      
+        border: 3px solid transparent;
+        transition: border-color 1.5s;
+    }
+    .event-card img:hover{
+        transform: scale(1.1);
+        border-color: var(--ssgr);
+
     }
 
     /* Add some padding inside the card container */
@@ -59,6 +65,14 @@ body {
     color: #dad490;
     border-radius: 15px;
     text-decoration: none;
+    transition: 1.5s;
+}
+.button:hover {
+    background-color: #dad490;  /* change as needed */
+    color: var(--ssgr);
+    transition: 1.5s;
+
+
 }
 [id^=modal] {
     display: none;
@@ -117,6 +131,8 @@ input[type=checkbox] {
             border-radius: 15px; /* rounded corners */
             gap: 16px; /* Adjust the gap between items as needed */
             padding: 16px;
+            transition: 1.5s;
+
         }
         .right-align {
             text-align: right;
@@ -125,6 +141,7 @@ input[type=checkbox] {
         .link-box:hover {
             background-color: #dad490;  /* change as needed */
             color: var(--ssgr);
+            transition: 1.5s;
         }
 
 .visit-event{
