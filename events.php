@@ -22,7 +22,6 @@ body {
 
     
 .event-card {
-    /* Add shadows to create the "card" effect */
     flex: 1;
     box-shadow: 0 0 12px 0 rgba(0,0,0,0.4);
     /*border: 1px solid black;*/
@@ -38,11 +37,12 @@ body {
   
     .event-card img{
         border: 3px solid transparent;
+        border-color: var(--ssgr);
         transition: border-color 1.5s;
     }
     .event-card img:hover{
         transform: scale(1.1);
-        border-color: var(--ssgr);
+        border-color: #dad490;
 
     }
 
@@ -71,7 +71,6 @@ body {
     background-color: #dad490;  /* change as needed */
     color: var(--ssgr);
     transition: 1.5s;
-
 
 }
 [id^=modal] {
