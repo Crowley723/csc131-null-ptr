@@ -13,8 +13,11 @@
       <input class="form-input" type="text" id="title" name="title" placeholder="Enter the title" required>
 
       <label class="form-label" for="cost">Cost:</label>
-      <input class="form-input" type="text" id="cost" name="cost" placeholder="Enter the cost (cost without any symbols)" required>
-
+        <div class="cost-input">
+            <input type="number" id="cost" name="cost" min="0" value="0">
+            
+        </div>
+      
       <label class="form-label" for="location">Location:</label>
       <input class="form-input" type="text" id="location" name="location" placeholder="Enter the location" required>
 
@@ -31,5 +34,15 @@
     </form>
   </div>
 </body>
+<script>
+    function changeCost(value) {
+  var costInput = document.getElementById("cost");
+  var currentValue = parseInt(costInput.value) || 0;
+  var newValue = currentValue + value;
+  if (newValue >= 0) {
+    costInput.value = newValue;
+  }
+}
+</script>
 </html>
 <?php include("./footer.php") ?>
