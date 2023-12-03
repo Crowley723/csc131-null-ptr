@@ -1,0 +1,59 @@
+.event-form {
+    max-width: 600px;
+    margin-top: auto;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    text-align: center;
+    color: var(--ssgr);
+  }
+  
+  .form {
+    margin-top: 20px;
+    color: var(--ssgr);
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+
+  .form-file {
+    margin-bottom: 20px;
+  }
+  
+  .submit-btn {
+    background-color: var(--ssgr);
+    color: #dad490;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 1.5s;
+    border-radius: 5px; /* To make the button curved */
+  }
+  
+  .submit-btn:hover {
+    background-color: #dad490;
+    color: var(--ssgr);
+    transition: 1.5s;
+  }
+  
+  body {
+    background: url('/assets/fall-street-background.webp');
+    background-size: cover;
+    background-attachment: fixed;
+  }
