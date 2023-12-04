@@ -1,4 +1,4 @@
-<?php include("./header.php") ?>
+<?php include("../header.php") ?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -120,28 +120,28 @@ input[type=checkbox] {
 }
 
 .link-box {
-            display: inline-block;
-            text-align: center;
-            padding: 16px;
-            background-color: var(--ssgr);  /* change as needed */
-            color: #dad490;  /* change as needed */
-            text-decoration: none;
-            width: 15%;  /* change as needed */
-            border-radius: 15px; /* rounded corners */
-            gap: 16px; /* Adjust the gap between items as needed */
-            padding: 16px;
-            transition: 1.5s;
+    display: inline-block;
+    text-align: center;
+    padding: 16px;
+    background-color: var(--ssgr);  /* change as needed */
+    color: #dad490;  /* change as needed */
+    text-decoration: none;
+    width: 15%;  /* change as needed */
+    border-radius: 15px; /* rounded corners */
+    gap: 16px; /* Adjust the gap between items as needed */
+    padding: 16px;
+    transition: 1.5s;
 
-        }
-        .right-align {
-            text-align: right;
-            padding: 10px;
-        }
-        .link-box:hover {
-            background-color: #dad490;  /* change as needed */
-            color: var(--ssgr);
-            transition: 1.5s;
-        }
+}
+.right-align {
+    text-align: right;
+    padding: 10px;
+}
+.link-box:hover {
+    background-color: #dad490;  /* change as needed */
+    color: var(--ssgr);
+    transition: 1.5s;
+}
 
 .visit-event{
     margin: 2vh;
@@ -174,7 +174,7 @@ input[type=checkbox] {
 <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Fetch data from the endpoint using Fetch API
-            fetch('fetchevents.php')
+            fetch('/events/fetchEvents.php')
                 .then(response => response.json())
                 .then(data => {
                     // Process the data and generate event cards
@@ -231,4 +231,4 @@ input[type=checkbox] {
 
 
 </html>
-<?php include("./footer.php") ?>
+<?php include("../footer.php") ?>

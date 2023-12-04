@@ -549,8 +549,8 @@ $(document).ready(function() {
   <div class="container nav">
       <img src="/assets/sac-state-logo-correct-500.png" class="img">  
       <a href="/">Home</a>
-      <a href="/events.php">Events</a>
-      <a href="/forum.php">Community Forum</a>
+      <a href="/events/events.php">Events</a>
+      <a href="/forum/forum.php">Community Forum</a>
       <a href="/map.php">Map</a>
       <a href="/faq.php">FAQ</a>
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>

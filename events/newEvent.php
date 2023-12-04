@@ -1,14 +1,14 @@
-<?php include("./header.php") ?>
+<?php include("../header.php") ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Add Event</title>
+  <title>New Event</title>
   <link rel="stylesheet" type="text/css" href="newEvent.css">
 </head>
 <body>
   <div class="event-form">
-    <h1 class="heading">Add Event</h1>
-    <form class="form" action="submit_event.php" method="post" enctype="multipart/form-data">
+    <h1 class="heading">New Event</h1>
+    <form class="form" action="/events/handleNewEvent.php" method="post" enctype="multipart/form-data">
       <label class="form-label" for="title">Title:</label>
       <input class="form-input" type="text" id="title" name="title" placeholder="Enter the title" required>
 
@@ -45,4 +45,4 @@
 }
 </script>
 </html>
-<?php include("./footer.php") ?>
+<?php include("../footer.php") ?>

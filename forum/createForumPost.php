@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "You must be logged in to create posts.";
         $_SESSION['MustBeLoggedIn'] = TRUE;
         http_response_code(401);
-        header(("Location: /forum.php"));
+        header(("Location: /forum/forum.php"));
         ob_flush();
         exit;
     }
@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($postBody)) {
         echo "Post cannot be empty.";
         $_SESSION['NeedPost'] = TRUE;
-        header(("Location: /forum.php"));
+        header(("Location: /forum/forum.php"));
         http_response_code(400);
         ob_flush();
         exit;
@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_close($createForumPostsQuery);
             
             http_response_code(200);
-            header("Location: /forum.php");
+            header("Location: /forum/forum.php");
             ob_flush();
             exit();
         } else{
@@ -54,21 +54,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_close($createForumPostsQuery);
             $_SESSION['UnknownError'] = TRUE;
             
-            header("Location: /forum.php");
+            header("Location: /forum/forum.php");
             http_response_code(500);
             ob_flush();
             exit();
         }
  
     }catch(Exception $e){
-        header("Location: /forum.php");
+        header("Location: /forum/forum.php");
         echo "Internal Server Error: " . $e->getMessage();
         http_response_code(500);
         ob_flush();
         exit();
     }
 }else{
-    header("Location: /forum.php");
+    header("Location: /forum/forum.php");
     http_response_code(501);
     ob_flush();
     exit();
@@ -85,7 +85,7 @@ function checkPostExists($databaseConnection, $postID){
             mysqli_stmt_bind_result($findExistingForumPostQuery, $resultID);
             mysqli_stmt_fetch($findExistingForumPostQuery);
             if($resultID == $postID){
-                header(("Location: /forum.php"));
+                header(("Location: /forum/forum.php"));
                 $_SESSION['DuplicatePost'] = TRUE;
                 $databaseConnection->close();
                 mysqli_stmt_close($findExistingForumPostQuery);
@@ -94,7 +94,7 @@ function checkPostExists($databaseConnection, $postID){
             }
             mysqli_stmt_close($findExistingForumPostQuery);
         }else{
-            header(("Location: /forum.php"));
+            header(("Location: /forum/forum.php"));
             $_SESSION['UnknownError'] = TRUE;
             mysqli_stmt_close($findExistingForumPostQuery);
             echo "Error Executing findExistingForumPostQuery";

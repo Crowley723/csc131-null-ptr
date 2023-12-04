@@ -22,7 +22,7 @@ function openModal() {
 
 function getPosts(){
     $.ajax({
-        url:'/getForumPosts.php',
+        url:'/forum/getForumPosts.php',
         type:'GET',
         dataType: 'json',
         success: function(data){
@@ -210,7 +210,7 @@ function checkLoginStatus(){
 function toggleLike(parentID){
     $.ajax({
         type: "POST",
-        url: "/handleToggleLikePost.php",
+        url: "/forum/handleToggleLikePost.php",
         data: jQuery.param({ PostID: parentID }),
         contentType: "application/x-www-form-urlencoded",
         success: function (response) {
@@ -225,7 +225,7 @@ function toggleLike(parentID){
 }
 function updatePost(parentID){
     $.ajax({
-        url: '/getSingleForumPost.php', // Adjust the URL to fetch a single post
+        url: '/forum/getSingleForumPost.php', // Adjust the URL to fetch a single post
         type: 'GET',
         data: jQuery.param({ PostID: parentID }),
         contentType: "application/x-www-form-urlencoded",
