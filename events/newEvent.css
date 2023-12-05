@@ -25,12 +25,11 @@
 
   input::placeholder,
   textarea::placeholder {
-    font-family: "Arial", sans-serif;
     font-size: 12px;
   }
   
   .form-input {
-    width: 100%;
+    width: 100%; 
     padding: 5px;
     margin-bottom: 10px;
     max-height: 150px;
@@ -38,9 +37,7 @@
     overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
   }
   .form-textarea {
-    width: 100%;
     padding: 5px;
-    margin-bottom: 10px;
     max-height: 150px;
     resize: vertical; /* Only allow vertical resizing */
     overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
