@@ -12,13 +12,13 @@ body {
     background-size: cover;
     background-attachment: fixed;
     }
-    .card-title {
-        padding: 16px 16px 16px 16px;
-        text-align: center; 
-        color: black;
-        margin: 0px;
-        font-weight: 750;
-    }
+.card-title {
+    padding: 16px 16px 16px 16px;
+    text-align: center; 
+    color: black;
+    margin: 0px;
+    font-weight: 750;
+}
 
     
 .event-card {
@@ -199,7 +199,7 @@ input[type=checkbox] {
                                         <p>${event.Description}</p>
                                         <p>${event.Location}</p>
                                         <p>DATE: ${event.Date}</p>
-                                        <p>COST: $ ${event.Cost}</p>
+                                        <p>COST: $${event.Cost}</p>
                                         <a class="visit-event" href="${event.Link}" target="_blank">Visit event</a>
                                     </div>
                                 </div>

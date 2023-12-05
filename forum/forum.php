@@ -49,7 +49,7 @@
     <div class="title-shit"><h1>Share Your Thoughts</h1></div>
 
 
-    <div class="container">
+    <div class="content-container">
     <!-------- left-sidebar -------- -->    
     <div class="left-sidebar">
 
