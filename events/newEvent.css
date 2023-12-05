@@ -1,0 +1,79 @@
+.event-form {
+    max-width: 600px;
+    margin-top: auto;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .heading {
+    text-align: center;
+    color: var(--ssgr);
+  }
+  
+  .form {
+    margin-top: 20px;
+    color: var(--ssgr);
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 12px;
+  }
+  
+  .form-input {
+    width: 100%; 
+    padding: 5px;
+    margin-bottom: 10px;
+    max-height: 150px;
+    resize: none; /* Only allow vertical resizing */
+    overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
+  }
+  .form-textarea {
+    padding: 5px;
+    max-height: 150px;
+    resize: vertical; /* Only allow vertical resizing */
+    overflow-y: auto; /* Add a scrollbar when content exceeds the maximum height */
+  }
+
+
+  .form-file {
+    margin-bottom: 20px;
+  }
+
+  .cost-input input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .submit-btn {
+    background-color: var(--ssgr);
+    color: #dad490;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 1.5s;
+    border-radius: 5px; /* To make the button curved */
+  }
+  
+  .submit-btn:hover {
+    background-color: #dad490;
+    color: var(--ssgr);
+    transition: 1.5s;
+  }
+  
+  body {
+    background: url('/assets/fall-street-background.webp');
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  

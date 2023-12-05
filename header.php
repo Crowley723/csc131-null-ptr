@@ -68,10 +68,27 @@
   --all-corners: .25rem .25rem .25rem .25rem;
   --tab-top-corners: 0.25rem 0.25rem 0 0;
   --tab-bottom-corners: 0 0 .25rem .25rem;
+
+  ::-webkit-input-placeholder {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+:-moz-placeholder {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+::-moz-placeholder {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+:-ms-input-placeholder {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
 }
 body {
   margin:0;
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+* {
+
 }
 .title-shit{
     padding: 1vh 0;
@@ -79,14 +96,24 @@ body {
     background-color: var(--wgo);
     color: black;
     margin: 0px;
-  }
-.topnav {
+    height: 20vh;
+    max-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-shit h1{
+  padding: 2vh 2vw;
+  
+}
+.top-nav {
     overflow: hidden;
     background-color: var(--white);
     padding: 1vh 0 1vh;
     box-sizing: border-box;
 }
-.container {
+.top-nav-content-container {
     width: 90%;
     max-width: 1400px;
     flex-wrap: nowrap;
@@ -194,7 +221,7 @@ body {
   display: inline-block;
 }
 
-.topnav a {
+.top-nav a {
     float: left;
     display: block;
     color: var(--black);
@@ -206,66 +233,67 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     transition: color 1s;
+    box-sizing: border-box;
     
 }
-.topnav .nav a:hover{
+.top-nav .nav a:hover{
     color: var(--brz);
     
 }
-.topnav .icon {
+.top-nav .icon {
     display: none;
 }
 
 @media screen and (max-width: 1100px) {
-  .container {
+  .top-nav-content-container {
     width: 90%; /* Adjusted width for better responsiveness */
   }
 
-  .topnav a {
+  .top-nav a {
     min-width: auto; /* Allowing buttons to adjust their width based on content */
   }
 }
 
 @media screen and (max-width: 600px) {
-  .container {
+  .top-nav-content-container {
     flex-wrap: wrap; /* Allow items to wrap to the next line on small screens */
   }
 
-  .topnav a:not(:first-child),
+  .top-nav a:not(:first-child),
   .dropdown .dropbtn {
     display: none;
   }
 
-  .topnav a.icon {
+  .top-nav a.icon {
     float: right;
     display: block;
   }
 
-  .topnav.responsive {
+  .top-nav.responsive {
     position: relative;
   }
 
-  .topnav.responsive .icon {
+  .top-nav.responsive .icon {
     position: absolute;
     right: 0;
     top: 0;
   }
 
-  .topnav.responsive a {
+  .top-nav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
 
-  .topnav.responsive .dropdown {
+  .top-nav.responsive .dropdown {
     float: none;
   }
 
-  .topnav.responsive .dropdown-content {
+  .top-nav.responsive .dropdown-content {
     position: relative;
   }
 
-  .topnav.responsive .dropdown .dropbtn {
+  .top-nav.responsive .dropdown .dropbtn {
     display: block;
     width: 100%;
     text-align: left;
@@ -277,7 +305,7 @@ body {
   }
 
   /* Additional styles to stack menu items vertically when the menu is open */
-  .topnav.responsive .nav {
+  .top-nav.responsive .nav {
     flex-direction: column;
     align-items: stretch;
   }
@@ -296,7 +324,7 @@ body {
   width: 100%;
   font-size: 17px;
 }
-.topnav .img { 
+.top-nav .img { 
     /*height: 51px;
     width: 500px;*/
     max-height: 100%;
@@ -483,11 +511,11 @@ function checkCookie() {
 window.onload = checkCookie;
 
 function showHamburgerMenu() {
-    var x = document.getElementById("topnav");
-    if (x.className === "topnav") {
+    var x = document.getElementById("top-nav");
+    if (x.className === "top-nav") {
       x.className += " responsive";
     } else {
-      x.className = "topnav";
+      x.className = "top-nav";
     }
   }
 
@@ -545,12 +573,12 @@ $(document).ready(function() {
 
 </div>
 <div style="clear: both;"></div>
-<div class="topnav" id="topnav">
-  <div class="container nav">
+<div class="top-nav" id="top-nav">
+  <div class="top-nav-content-container nav">
       <img src="/assets/sac-state-logo-correct-500.png" class="img">  
       <a href="/">Home</a>
-      <a href="/events.php">Events</a>
-      <a href="/forum.php">Community Forum</a>
+      <a href="/events/events.php">Events</a>
+      <a href="/forum/forum.php">Community Forum</a>
       <a href="/map.php">Map</a>
       <a href="/faq.php">FAQ</a>
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="showHamburgerMenu()">&#9776;</a>

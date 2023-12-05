@@ -45,14 +45,15 @@ if($_SERVER["REQUEST_METHOD"] == "GET") {
         }else{
             //echo "Error: " . $getEventsQuery->error;
             $_SESSION['NoEventsFound'] = TRUE;
-            header("Location: /events.php");
+            header("Location: /events/events.php");
             ob_flush();
             exit();
         }
     
 
 
-}else    http_response_code(503);
+}else {
+    http_response_code(503);
     ob_flush();
-    exit();
+    exit();}
 ?>

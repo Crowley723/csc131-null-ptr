@@ -1,4 +1,4 @@
-<?php include("./header.php") ?>
+<?php include("../header.php") ?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -24,9 +24,9 @@
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
         <script src="https://kit.fontawesome.com/31806d8454.js" crossorigin="anonymous"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="fourmStyle.css">
+        <link rel="stylesheet" href="/forum/forumStyle.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="forumScript.js"></script>
+        <script src="/forum/forumScript.js"></script>
     </head>
 
     
@@ -49,7 +49,7 @@
     <div class="title-shit"><h1>Share Your Thoughts</h1></div>
 
 
-    <div class="container">
+    <div class="content-container">
     <!-------- left-sidebar -------- -->    
     <div class="left-sidebar">
 
@@ -66,7 +66,7 @@
         <div id="postModal" class="modal">
             <div class="modal-content">
                 <h2>Create a Post</h2>
-                <form action="/createForumPost.php" method="POST" style="padding:8px">
+                <form action="/forum/createForumPost.php" method="POST" style="padding:8px">
                     <textarea id="postText" style="padding:8px"name="postText" placeholder="Type your post here" required></textarea>
                     <input type="submit">
                     <button type="button" onclick="closeModal()" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>

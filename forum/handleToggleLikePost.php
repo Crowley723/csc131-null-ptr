@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "You must be logged in to like posts.";
         $_SESSION['MustBeLoggedIn'] = TRUE;
         http_response_code(401);
-        header(("Location: /forum.php"));
+        header(("Location: /forum/forum.php"));
         ob_flush();
         exit;
     }

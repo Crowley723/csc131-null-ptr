@@ -12,10 +12,10 @@
     <div class="footer-content">
             <h3>Connect with us!</h3>
             <ul class="socials">
-                <li><a href="https://www.facebook.com/sacstate/"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com/sacstate?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/sacstate/?hl=en"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/school/sacstate/"><i class="fa fa-linkedin-square"></i></a></li>
+                <li><a href="https://www.facebook.com/sacstate/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/sacstate?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/sacstate/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/school/sacstate/" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
             </ul>
     </div>
         <div class="footer-bottom">
