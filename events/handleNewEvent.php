@@ -196,7 +196,7 @@ function validateAndSaveImage($uploaded_file){
 }
 
 function cleanup(){ /*set Location header, flush output buffer and exit*/
-    //header("Location: /events/newEvent.php");
+    header("Location: /events/events.php");
     ob_flush();
     exit();
 }

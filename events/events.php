@@ -222,9 +222,18 @@ input[type=checkbox] {
     <body>
         <div class="title-shit"><h1>Explore Events Around Your Campus Today!</h1></div>
         
+        
         <div class="right-align" style="padding-right: 23px;">
-        <a class="link-box" href="https://catalog.csus.edu/academic-calendar/" target="_blank">CSUS Calendar </a>
-    </div>
+        <?php 
+        if(isset($_SESSION['FullName']) || isset($_SESSION['Email'])){
+            if(isset($_SESSION['ROLE']) && $_SESSION['ROLE'] == 'ADMIN' ){
+                echo "<a class=\"link-box\" href=\"/events/newEvent.php\" target=\"_blank\">New Event</a>";
+            }
+        }
+        
+        ?>
+        <a class="link-box" href="https://catalog.csus.edu/academic-calendar/" target="_blank">CSUS Calendar</a>
+        </div>
     </body>
 
     <div id="event-container" class="event-container"></div> 
