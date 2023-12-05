@@ -5,7 +5,7 @@
 
 
 body {
-        
+    overflow-x: hidden;
     width: 100vw;
     height: 100vh;
     background: url('/assets/fall-street-background.webp');
