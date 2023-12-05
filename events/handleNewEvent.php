@@ -14,12 +14,21 @@ define('SAVE_DIRECTORY',  "../assets/");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     ob_start();
     if(!isset($_SESSION['FullName']) || !isset($_SESSION['Email'])){
+        
         $_SESSION['MustBeLoggedIn'] = TRUE;
         header(("Location: /events/newEvent.php"));
         http_response_code(401);
         ob_flush();
         exit;
     }
+    if(!isset($_SESSION['ROLE']) || $_SESSION['ROLE'] == 'USER'){
+        $_SESSION['MustBeAdmin'] = TRUE;
+        header(("Location: /events/newEvent.php"));
+        http_response_code(401);
+        ob_flush();
+        exit;
+    }
+    
 
 
     $email = isset($_SESSION['Email']); 
@@ -51,10 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         (checkIfPostExists($databaseConnection, $eventID)) ? cleanup() : null;
         $addNewEventQuery = mysqli_prepare($databaseConnection,"Insert INTO csc131.Events (ID, Title, Cost, Date, Location, Description, Link, `Image path`, Author) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         mysqli_stmt_bind_param($addNewEventQuery, "sssssssss", $eventID, $eventTitle, $eventCost, $eventDate, $eventLocation, $eventDescription, $eventLink, $eventImagePath, $email);
-        if (mysqli_stmt_execute($addNewEventQuery)){
-            echo "TRUE";
-        }else{
-            echo "FALSE";
+        if (!mysqli_stmt_execute($addNewEventQuery)){
+            $_SESSION["UnknownError"] = TRUE;
+            mysqli_stmt_close($addNewEventQuery);
+            http_response_code(500);
+            cleanup();
         }
         mysqli_stmt_close($addNewEventQuery);
 

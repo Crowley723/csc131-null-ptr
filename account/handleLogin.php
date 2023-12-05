@@ -70,12 +70,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $email = $userData['Email'];
             $fullName = $userData['Full Name'];
             $studentID = $userData['StudentID'];
+            $userRole = $userData['Role'];
             if (password_verify($password, $hashedPassword)) {
                 // Store user information in session variables
                 
                 $_SESSION['Email'] = $email;
                 $_SESSION['FullName'] = $fullName;
                 $_SESSION['StudentID'] = $studentID;
+                $_SESSION['ROLE'] = $userRole;
             
                 //echo "<br>User " . $_SESSION['FullName'] . " Logged In! </br>";
                 

@@ -14,40 +14,28 @@ ob_flush();
 <!DOCTYPE html>
 <html>
 <style>
-::-webkit-input-placeholder {
-font-family: Helvetica;
+body{
+    background-image: url('/assets/fall-street-background.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optional: fixed background */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
 }
-:-moz-placeholder {
-    font-family: Helvetica;
+.new-event-header {
+    margin-bottom: 0;;
 }
-::-moz-placeholder {
-    font-family: Helvetica;
-}
-:-ms-input-placeholder {
-    font-family: Helvetica;
-}
-    body{
-        background-image: url('/assets/fall-street-background.webp');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed; /* Optional: fixed background */
-        margin: 0; /* Remove default body margin */
-        padding: 0; /* Remove default body padding */
-    }
-    .new-event-header {
-        margin-bottom: 0;;
-    }
-    .form-box {
-        margin: 16px auto 16px;
-        width : 25%;
-        padding: 20px 10px 20px;
-        text-align: center;
-        border: 1px solid black;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-        background-color: white;
+.form-box {
+    margin: 16px auto 16px;
+    width : 25%;
+    padding: 20px 10px 20px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    background-color: white;
 
-    }
-    .form-box .entry-label {
+}
+.form-box .entry-label {
   text-align: left;
   color: black;
   padding: 1vh 0vw;
@@ -96,15 +84,13 @@ resize: vertical;
     background-color: #dad490;
     color: var(--stgr);
     transition: 1.5s;
-  }
+}
 
 </style>
     <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>New Event</title>
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
-
-
     </head>
         <body>
         <div class="form-box">
@@ -143,7 +129,16 @@ resize: vertical;
                     echo "<p style=\"color:red;\">You must be logged in.</p>";
                     $_SESSION['MustBeLoggedIn'] = FALSE;
                 }
-
+                if(isset($_SESSION['MustBeAdmin']) && $_SESSION['MustBeAdmin'] === TRUE){
+                    echo "<p style=\"color:red;\">You must be an admin to make new events.</p>";
+                    $_SESSION['MustBeAdmin'] = FALSE;
+                }else if(!isset($_SESSION['ROLE']) || $_SESSION['ROLE'] == 'USER'){
+                    echo "<p style=\"color:red;\">You must be an admin to make new events.</p>";
+                }
+                if(isset($_SESSION['UnknownError']) && $_SESSION['UnknownError'] === TRUE){
+                    echo "<p style=\"color:red;\">Unknown Error</p>";
+                    $_SESSION['UnknownError'] = FALSE;
+                }
                 ?>
             </div>
             <form form class="form-container" action="/events/handleNewEvent.php" method="post" enctype="multipart/form-data">
@@ -171,7 +166,6 @@ resize: vertical;
 
                 <button id="submit">Submit</button>
             </form>
-            
         </div>
     </body>
 </body>
